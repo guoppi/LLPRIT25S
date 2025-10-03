@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Tehtävä 5
+            
+            int luku;
+            do
+            {
+                luku = int.Parse(Console.ReadLine());
+
+                if (luku >= 0)
+                {
+                    int nelio = luku * luku;
+                    Console.WriteLine(nelio);
+                }
+            }
+            while (luku >= 0);
+            
+
+            // Tehtävä 6
+
+            int luku1;
+            int pienin = int.MaxValue;
+            int suurin = int.MinValue;
+
+            do
+            {
+                luku1 = int.Parse(Console.ReadLine());
+
+                if (luku1 >= 0)
+                {
+                    if (luku1 < pienin)
+                    {
+                        pienin = luku1;
+                    }
+                    if (luku1 > suurin)
+                    {
+                        suurin = luku1;
+                    }
+                }
+            }
+            while (luku1 >= 0);
+            Console.WriteLine(pienin);
+            Console.WriteLine(suurin);
+        }
+    }
+}
