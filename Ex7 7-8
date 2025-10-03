@@ -46,7 +46,7 @@ namespace Ex6
                 Console.Write("Haluatko laskea uuden keskiarvon? (Yes/No): ");
                 string vastaus = Console.ReadLine();        // Luetaan vastaus
 
-                if (vastaus.ToLower() == "no")              // Jos vastaus on "no", lopetetaan
+                if (vastaus.ToLower() == "no")              // Jos vastaus on "no", lopetetaan, sekä lisätty To.Lower, ilman tätä moodle vpl antaa output too large 256kb, eli muuntaa kaikki merkkijonot pieniksi kirjaimeksi.
                 {
                     Console.WriteLine("Ohjelma lopetetaan.");
                     break;
