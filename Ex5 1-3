@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Tehtävä 1
+
+            Console.Write("Enter your name: ");
+            string nimi = Console.ReadLine();
+
+            Console.Write("Enter your birth year: ");
+            int syntymaVuosi = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter current year: ");
+            int kuluvaVuosi = Convert.ToInt32(Console.ReadLine());
+
+            int ika = kuluvaVuosi - syntymaVuosi;
+
+            Console.WriteLine();
+            Console.WriteLine($"{nimi} {ika} years");
+            Console.WriteLine();
+
+            // Tehtävä 2
+
+            string MERKKI = "o";
+
+            Console.WriteLine("{0,4}", MERKKI);
+            Console.WriteLine("{0,3}{0}{0}", MERKKI);
+            Console.WriteLine("{0,2}{0,4}", MERKKI);
+            Console.WriteLine("{0}{0,6}", MERKKI);
+            Console.WriteLine("{0,2}{0,4}", MERKKI);
+            Console.WriteLine("{0,3}{0}{0}", MERKKI);
+            Console.WriteLine("{0,4}", MERKKI);
+            Console.WriteLine();
+
+            // Tehtävä 3
+
+            Console.Write("Enter a letter: ");
+            MERKKI = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("{0,4}", MERKKI);
+            Console.WriteLine("{0,3}{0}{0}", MERKKI);
+            Console.WriteLine("{0,2}{0,4}", MERKKI);
+            Console.WriteLine("{0}{0,6}", MERKKI);
+            Console.WriteLine("{0,2}{0,4}", MERKKI);
+            Console.WriteLine("{0,3}{0}{0}", MERKKI);
+            Console.WriteLine("{0,4}", MERKKI);
+
+        }
+    }
+}
