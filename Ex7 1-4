@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Tehtävä 1
+
+            Console.Write("Anna arvo luvulle n: ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                if (i < n)
+                    Console.Write(i + ", ");
+                else
+                    Console.Write(i);
+            }
+            Console.WriteLine();
+
+            // Tehtävä 2
+
+            Console.Write("Anna arvo luvulle n: ");
+            int n1 = int.Parse(Console.ReadLine());
+
+            for (int i1 = n1; i1 >= 1; i1--)
+            {
+                if (i1 > 1)
+                    Console.Write(i1 + ", ");
+                else
+                    Console.Write(i1);
+            }
+            Console.WriteLine();
+
+            // Tehtävä 3
+
+            Console.Write("Anna jokin pieni kirjain a-z: ");
+            char kirjain2 = char.Parse(Console.ReadLine());
+
+            for (char kirjain1 =  'a'; kirjain1 <= kirjain2; kirjain1++)
+            {
+            if (kirjain1 < kirjain2)
+                    Console.Write(kirjain1 + ", ");
+                else
+                    Console.Write(kirjain1);
+            }
+            Console.WriteLine();
+
+            // Tehtävä 4
+
+            Console.Write("Anna ensimmäinen kirjain: ");
+            char A1 = char.Parse(Console.ReadLine());
+
+            Console.Write("Anna toinen kirjain: ");
+            char A2 = char.Parse(Console.ReadLine());
+
+            if (A1 < A2)
+            {
+                for (char c = A1; c <= A2; c++)
+                {
+                    Console.Write(c);
+                    if (c != A2)
+                    {
+                        Console.Write(", ");
+                    }
+                }
+            }
+            else
+            {
+                for (char c = A1; c >= A2; c--)
+                {
+                    Console.Write(c);
+                    if (c != A2)
+                    {
+                        Console.Write(", ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
