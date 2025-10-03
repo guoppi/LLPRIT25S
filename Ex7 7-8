@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+namespace Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Tehtävä 7: Ensimmäinen keskiarvolasku
+            double summa = 0;
+            int lukumaara = 0;
+
+            while (true)
+            {
+                string syote = Console.ReadLine();
+
+                try
+                {
+                    double luku = double.Parse(syote);
+                    if (luku < 0)
+                        break;
+
+                    summa += luku;
+                    lukumaara++;
+                }
+                catch
+                {
+                    // Ei tulosteta virheilmoitusta
+                }
+            }
+
+            if (lukumaara > 0)
+            {
+                double keskiarvo = summa / lukumaara;
+                Console.WriteLine($"{keskiarvo:F3}");
+            }
+
+            // Tehtävä 8: Uusien keskiarvojen laskeminen
+            while (true)
+            {
+                string vastaus = Console.ReadLine();
+
+                if (vastaus.ToLower() == "no")
+                    break;
+
+                if (vastaus.ToLower() == "yes")
+                {
+                    summa = 0;
+                    lukumaara = 0;
+
+                    while (true)
+                    {
+                        string syote = Console.ReadLine();
+
+                        try
+                        {
+                            double luku = double.Parse(syote);
+                            if (luku < 0)
+                                break;
+
+                            summa += luku;
+                            lukumaara++;
+                        }
+                        catch
+                        {
+                            // Ei tulosteta virheilmoitusta
+                        }
+                    }
+
+                    if (lukumaara > 0)
+                    {
+                        double keskiarvo = summa / lukumaara;
+                        Console.WriteLine($"{keskiarvo:F3}");
+                    }
+                }
+            }
+        }
+    }
+}
