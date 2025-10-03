@@ -19,7 +19,7 @@ namespace Ex6
                 Console.Write("Syötä luku: "); // Kehotus käyttäjälle
                 string syote = Console.ReadLine(); // Luetaan käyttäjän syöte
 
-                try
+                try // Perustelut alhaalla, eli try-catch metodi
                 {
                     double luku = double.Parse(syote); // Muutetaan syöte luvuksi
 
