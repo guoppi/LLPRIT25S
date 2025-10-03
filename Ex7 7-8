@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-
 
 namespace Ex6
 {
@@ -9,55 +6,76 @@ namespace Ex6
     {
         static void Main(string[] args)
         {
-            // Tehtävä 7: Ensimmäinen keskiarvolasku
-            double summa = 0;
-            int lukumaara = 0;
+            // Tehtävä 7: Laske keskiarvo yhdestä luvusta tai luvuista
+            Console.WriteLine("Tehtävä 7: Laske keskiarvo syöttämällä positiivisia lukuja.");
+            Console.WriteLine("Syötä negatiivinen luku lopettaaksesi.");
 
+            double summa = 0;       // Muuttuja lukujen summalle
+            int lukumaara = 0;      // Muuttuja lukujen määrälle
+
+            // Silmukka, joka pyytää lukuja kunnes negatiivinen luku syötetään
             while (true)
             {
-                string syote = Console.ReadLine();
+                Console.Write("Syötä luku: "); // Kehotus käyttäjälle
+                string syote = Console.ReadLine(); // Luetaan käyttäjän syöte
 
                 try
                 {
-                    double luku = double.Parse(syote);
-                    if (luku < 0)
+                    double luku = double.Parse(syote); // Muutetaan syöte luvuksi
+
+                    if (luku < 0) // Jos luku on negatiivinen, lopetetaan
                         break;
 
-                    summa += luku;
-                    lukumaara++;
+                    summa += luku;     // Lisätään luku summaan
+                    lukumaara++;       // Kasvatetaan lukumäärää
                 }
                 catch
                 {
-                    // Ei tulosteta virheilmoitusta
+                    Console.WriteLine("Virheellinen syöte, yritä uudelleen."); // Jos syöte ei ole luku
                 }
             }
 
+            // Lasketaan ja näytetään keskiarvo, jos lukuja on annettu
             if (lukumaara > 0)
             {
                 double keskiarvo = summa / lukumaara;
-                Console.WriteLine($"{keskiarvo:F3}");
+                Console.WriteLine($"Keskiarvo on {keskiarvo:F3}"); // Tulostetaan keskiarvo kolmella desimaalilla
+            }
+            else
+            {
+                Console.WriteLine("Et syöttänyt yhtään positiivista lukua."); // Jos lukuja ei ollut
             }
 
-            // Tehtävä 8: Uusien keskiarvojen laskeminen
+            Console.WriteLine(); // Tyhjä rivi selkeyden vuoksi
+
+            // Tehtävä 8: Mahdollisuus laskea uusia keskiarvoja
             while (true)
             {
-                string vastaus = Console.ReadLine();
+                Console.Write("Haluatko laskea uuden keskiarvon? (Yes/No): "); // Kysytään käyttäjältä
+                string vastaus = Console.ReadLine(); // Luetaan vastaus
 
-                if (vastaus.ToLower() == "no")
-                    break;
-
-                if (vastaus.ToLower() == "yes")
+                if (vastaus.ToLower() == "no") // Jos vastaus on "no", lopetetaan ohjelma
                 {
-                    summa = 0;
-                    lukumaara = 0;
+                    Console.WriteLine("Ohjelma lopetetaan.");
+                    break;
+                }
+
+                if (vastaus.ToLower() == "yes") // Jos vastaus on "yes", aloitetaan uusi keskiarvolasku
+                {
+                    summa = 0;       // Nollataan summa
+                    lukumaara = 0;   // Nollataan lukumäärä
+
+                    Console.WriteLine("Syötä positiivisia lukuja. Negatiivinen luku lopettaa.");
 
                     while (true)
                     {
+                        Console.Write("Syötä luku: ");
                         string syote = Console.ReadLine();
 
                         try
                         {
                             double luku = double.Parse(syote);
+
                             if (luku < 0)
                                 break;
 
@@ -66,15 +84,25 @@ namespace Ex6
                         }
                         catch
                         {
-                            // Ei tulosteta virheilmoitusta
+                            Console.WriteLine("Virheellinen syöte, yritä uudelleen.");
                         }
                     }
 
                     if (lukumaara > 0)
                     {
                         double keskiarvo = summa / lukumaara;
-                        Console.WriteLine($"{keskiarvo:F3}");
+                        Console.WriteLine($"Keskiarvo on {keskiarvo:F3}");
                     }
+                    else
+                    {
+                        Console.WriteLine("Et syöttänyt yhtään positiivista lukua.");
+                    }
+
+                    Console.WriteLine(); // Tyhjä rivi selkeyden vuoksi
+                }
+                else
+                {
+                    Console.WriteLine("Vastaa Yes tai No."); // Jos vastaus ei ole kumpikaan
                 }
             }
         }
