@@ -29,7 +29,8 @@ namespace Ex6
                     summa += luku;     // Lisätään luku summaan
                     lukumaara++;       // Kasvatetaan lukumäärää
                 }
-                catch
+                catch // estää ohjelman kaatumisesta etenkin kun ei käytä TryParse, toki voi tehä sit Try.Parse :lla mut sit koodi on hieman erilainen.
+                // Eli toisin sanoien TryParse ei kaadu virheellisestä syötteestä, mutta Parse kaatuu, ellei sitä suojata try-catch-rakenteella.
                 {
                     Console.WriteLine("Virheellinen syöte, yritä uudelleen."); // Jos syöte ei ole luku
                 }
