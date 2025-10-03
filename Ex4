@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+                // Tehtävä 1
+
+                int i = 10;
+                int k = 100;
+                double j = (double)i / k;
+                Console.WriteLine("j = " + j);
+                Console.WriteLine("");
+                // Tulostus oli 0 koska i ja k olivat sulkeissa joten kokonaisluvut laskettiin ensin ennen doubletiksi muuntamista
+                // eli 10/100 kokonaislukuna on 0 (ei 0.1). Vasta tämän jälkeen tulos muunnetaan doubleksi (double)0 = 0.0
+                // Muokattu siten että muunnetaan i doubleksi ensin ennen jakolaskua, samoin voi tehdä myös k:lle tai molemmille
+                // (double)i / (double)k; jolloin tulostus on oikea 0.1
+
+                // Tehtävä 2
+
+                // Kaikki desimaaliluvut ilman erillistä merkintää ovat oletuksena doubleja, joten ainut mitä ei tarvinnut lisätä tai muuntaa oli double
+                // Vasen ja oikeapuoli pitää täsmää jotta ohjelma osaa lukea / suorittaa tehtävän
+
+                //byte myByte = 293.34; byten range on 0-255 eli ei mahdu tai muuten tulee overflow
+                Console.Write("Number constant 293.34 converts in type byte as ");
+                Console.WriteLine("with no methods");
+                Console.WriteLine("");
+
+                int myInt = (int)293.34; // Muunnettu kokonaisluvuksi mutta menettää desimaalin
+                Console.Write("Number constant 293.34 converts in type int as ");
+                Console.WriteLine(myInt + " with explicit casting but with loss of data");
+                Console.WriteLine("");
+
+                float myFloat = (float)293.34; // Lisätty float koska ohjelma tulkitsee desimaalit oletuksena doubleksi
+                Console.Write("Number constant 293.34 converts in type float as ");
+                Console.WriteLine(myFloat + " with explicit casting and without loss of data");
+                Console.WriteLine("");
+
+                double myDouble = 293.34; // double on oletustyyppi desimaaleille
+                Console.Write("Number constant 293.34 converts in type double as ");
+                Console.WriteLine(myDouble + " without explicit casting");
+                Console.WriteLine("");
+
+                decimal myDecimal = (decimal)293.34; // Muunettu desimaaliksi
+                Console.Write("Number constant 293.34 converts in type decimal as ");
+                Console.WriteLine(myDecimal + " with explicit casting and without loss of data");
+                Console.WriteLine("");
+
+                bool myBoolean = Convert.ToBoolean(293.34); // muuntaa True koska luku ei ole 0.
+                Console.Write("Number constant 293.34 converts in type boolean as ");
+                Console.WriteLine(myBoolean + " not with explicit casting, but with Convert -object");
+                Console.WriteLine("");
+
+                string myString = Convert.ToString(293.34); // Käytetty convert koska suora muunnos ei onnistu
+                Console.Write("Number constant 293.34 converts in type string as ");
+                Console.WriteLine(myString + " not with explicit casting, but with Convert -object");
+                Console.WriteLine("");
+
+                // Tehtävä 3
+
+                string origNr = "293,34";
+                CultureInfo fi = new CultureInfo("fi-FI"); // Määritellään suomalainen kulttuuri jotta pilkku toimii desimaalierottimena
+
+                float floatNr = Convert.ToSingle(origNr, fi); // Muuntaa merkkijonon floatiksi
+                double doubleNr = Convert.ToDouble(origNr, fi); // Muuntaa merkkijonon doubleksi
+                decimal decimalNr = Convert.ToDecimal(origNr, fi); // Muuntaa merkkijonon decimaliksi
+                string stringNr = origNr; // Merkkijono pysyy samana
+                Console.WriteLine("Byte type is NOT ok");
+                Console.WriteLine("Int type is NOT ok");
+                Console.WriteLine("Float type is ok: " + floatNr);
+                Console.WriteLine("Double type is ok: " + doubleNr);
+                Console.WriteLine("Decimal type is ok: " + decimalNr);
+                Console.WriteLine("Boolean type is NOT ok");
+                Console.WriteLine("String type is ok: " + stringNr);
+                Console.WriteLine("");
+
+                // Tehtävä 4
+
+                // Celsius arvot
+                double c1 = 0;
+                double c2 = 100;
+                double c3 = 37.3;
+                // Fahrenheit laskenta (double tyyppi säilyy desimaalit tarkasti)
+                double f1 = (9.0 / 5.0) * c1 + 32;
+                double f2 = (9.0 / 5.0) * c2 + 32;
+                double f3 = (9.0 / 5.0) * c3 + 32;
+
+                Console.WriteLine($"{c1}°C = {f1}°F");
+                Console.WriteLine($"{c2}°C = {f2}°F");
+                Console.WriteLine($"{c3}°C = {f3}°F");
+                Console.WriteLine("");
+
+                // Tehtävä 5
+
+                // Määritellään muuttujat double tyyppisinä jotta tulos olisi mahdollisimman tarkka
+                double x = 1, y = 1, z = 1, w = 0;
+                double x1 = 11, y1 = 11, z1 = 11, w1 = 11;
+                double result1 = (10 + x) / (9 * x + 2) - 4 * (x / y) + (z * 3 + w) / (z / x + y);
+                double result2 = (10 + x1) / (9 * x1 + 2) - 4 * (x1 / y1) + (z1 * 3 + w1) / (z1 / x1 + y1);
+                Console.WriteLine($"f({x},{y},{z},{w}) = {result1}");
+                Console.WriteLine($"f({x1},{y1},{z1},{w1}) = {result2}");
+
+            }
+        }
+    }
+}
