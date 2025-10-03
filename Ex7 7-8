@@ -47,7 +47,7 @@ namespace Ex6
                 string vastaus = Console.ReadLine();        // Luetaan vastaus
 
                 if (vastaus.ToLower() == "no")              // Jos vastaus on "no", lopetetaan, sekä lisätty To.Lower, ilman tätä moodle vpl antaa output too large 256kb, eli muuntaa kaikki merkkijonot pieniksi kirjaimeksi.
-                {
+                {                                            // Koska en tiedä tulostaako moodle isol vai pienel ton "Yes" vai "yes" jne ni se ohjelma ns. jäi looppille ja minuutin jälkee se heittää just tota 256 kb erroria
                     Console.WriteLine("Ohjelma lopetetaan.");
                     break;
                 }
