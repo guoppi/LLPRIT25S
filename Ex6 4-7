@@ -1,0 +1,143 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter time in hour (0-23): ");
+            int aika = Convert.ToInt32(Console.ReadLine());
+
+            if (aika < 0 || aika > 23)
+            {
+                Console.WriteLine("Invalid hour input");
+            }
+            else
+            {
+                if (aika <= 7 || aika > 22)
+                {
+                    Console.WriteLine("Go to sleep");
+                    if (aika == 7)
+                    {
+                        Console.WriteLine("Have breakfast");
+                    }
+                }
+                else if (aika > 7 && aika <= 15)
+                {
+                    Console.WriteLine("Go to work");
+                    if (aika == 11)
+                    {
+                        Console.WriteLine("Have lunch");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Go to friends");
+                    if (aika == 17)
+                    {
+                        Console.WriteLine("Have dinner");
+                    }
+                }
+            }
+            Console.WriteLine();
+
+            // Tehtävä 6
+
+            const double HINTA_95E = 1.341;
+            const double HINTA_98 = 1.520;
+            const double HINTA_DIESEL = 1.153;
+
+
+            Console.Write("Enter fuel type (95E, 98, Diesel): ");
+            string fuelType = Console.ReadLine();
+
+            double liters;
+            double totalprice;
+
+            switch (fuelType)
+            {
+                case "95E":
+                    Console.Write("Enter amount of liters: ");
+                    liters = double.Parse(Console.ReadLine());
+                    totalprice = liters * HINTA_95E;
+                    break;
+                    
+                case "98":
+                    Console.Write("Enter amount of liters: ");
+                    liters = double.Parse(Console.ReadLine());
+                    totalprice = liters * HINTA_98;
+                    break;
+
+                case "Diesel":
+                    Console.Write("Enter amount of liters: ");
+                    liters = double.Parse(Console.ReadLine());
+                    totalprice = liters * HINTA_DIESEL;
+                    break;
+                    
+                default:
+                    Console.WriteLine("Invalid fuel command");
+                    return;
+            }
+
+            Console.WriteLine($"Total price is {totalprice:F2} euros"); 
+
+            
+            if (liters >= 50.00)
+                Console.WriteLine("Free coffee");
+
+            Console.WriteLine();
+
+            // Tehtävä 7
+
+
+            Console.Write("Choose operation: plus, minus, mult, div: ");
+            string operation = Console.ReadLine();
+
+            Console.Write("Enter first number: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double result;
+
+            switch (operation)
+            {
+                case "plus":
+                    result = num1 + num2;
+                    Console.WriteLine($"Result is {result:F2}");
+                    break;
+
+                case "minus":
+                    result = num1 - num2;
+                    Console.WriteLine($"Result is {result:F2}");
+                    break;
+
+                case "mult":
+                    result = num1 * num2;
+                    Console.WriteLine($"Result is {result:F2}");
+                    break;
+
+                case "div":
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Dividing with zero not allowed");
+                    }
+                    else
+                    {
+                        result = num1 / num2;
+                        Console.WriteLine($"Result is {result:F2}");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid operator");
+                    break;
+            }
+        }
+    }
+}
