@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Ex6
 {
@@ -10,41 +12,30 @@ namespace Ex6
             Console.WriteLine("Tehtävä 7: Laske keskiarvo syöttämällä positiivisia lukuja.");
             Console.WriteLine("Syötä negatiivinen luku lopettaaksesi.");
 
-            double summa = 0;       // Muuttuja lukujen summalle
-            int lukumaara = 0;      // Muuttuja lukujen määrälle
+            double summa = 0;       // Summa syötetyistä luvuista
+            int lukumaara = 0;      // Syötettyjen lukujen määrä
 
-            // Silmukka, joka pyytää lukuja kunnes negatiivinen luku syötetään
             while (true)
             {
-                Console.Write("Syötä luku: "); // Kehotus käyttäjälle
-                string syote = Console.ReadLine(); // Luetaan käyttäjän syöte
+                Console.Write("Syötä luku: ");
+                string syote = Console.ReadLine();         // Luetaan syöte
+                double luku = double.Parse(syote);         // Muutetaan syöte luvuksi
 
-                try // Perustelut alhaalla, eli try-catch metodi
-                {
-                    double luku = double.Parse(syote); // Muutetaan syöte luvuksi
+                if (luku < 0)                               // Negatiivinen luku lopettaa
+                    break;
 
-                    if (luku < 0) // Jos luku on negatiivinen, lopetetaan
-                        break;
-
-                    summa += luku;     // Lisätään luku summaan
-                    lukumaara++;       // Kasvatetaan lukumäärää
-                }
-                catch // estää ohjelman kaatumisesta etenkin kun ei käytä TryParse, toki voi tehä sit Try.Parse :lla mut sit koodi on hieman erilainen.
-                // Eli toisin sanoien TryParse ei kaadu virheellisestä syötteestä, mutta Parse kaatuu, ellei sitä suojata try-catch-rakenteella.
-                {
-                    Console.WriteLine("Virheellinen syöte, yritä uudelleen."); // Jos syöte ei ole luku
-                }
+                summa += luku;                             // Lisätään luku summaan
+                lukumaara++;                               // Kasvatetaan lukumäärää
             }
 
-            // Lasketaan ja näytetään keskiarvo, jos lukuja on annettu
             if (lukumaara > 0)
             {
-                double keskiarvo = summa / lukumaara;
-                Console.WriteLine($"Keskiarvo on {keskiarvo:F3}"); // Tulostetaan keskiarvo kolmella desimaalilla
+                double keskiarvo = summa / lukumaara;      // Lasketaan keskiarvo
+                Console.WriteLine($"Keskiarvo on {keskiarvo:F3}"); // Tulostetaan keskiarvo
             }
             else
             {
-                Console.WriteLine("Et syöttänyt yhtään positiivista lukua."); // Jos lukuja ei ollut
+                Console.WriteLine("Et syöttänyt yhtään positiivista lukua.");
             }
 
             Console.WriteLine(); // Tyhjä rivi selkeyden vuoksi
@@ -52,19 +43,19 @@ namespace Ex6
             // Tehtävä 8: Mahdollisuus laskea uusia keskiarvoja
             while (true)
             {
-                Console.Write("Haluatko laskea uuden keskiarvon? (Yes/No): "); // Kysytään käyttäjältä
-                string vastaus = Console.ReadLine(); // Luetaan vastaus
+                Console.Write("Haluatko laskea uuden keskiarvon? (Yes/No): ");
+                string vastaus = Console.ReadLine();        // Luetaan vastaus
 
-                if (vastaus.ToLower() == "no") // Jos vastaus on "no", lopetetaan ohjelma
+                if (vastaus.ToLower() == "no")              // Jos vastaus on "no", lopetetaan
                 {
                     Console.WriteLine("Ohjelma lopetetaan.");
                     break;
                 }
 
-                if (vastaus.ToLower() == "yes") // Jos vastaus on "yes", aloitetaan uusi keskiarvolasku
+                if (vastaus.ToLower() == "yes")             // Jos vastaus on "yes", aloitetaan uusi laskenta
                 {
-                    summa = 0;       // Nollataan summa (ei tarvitsi määritellä muuttujaa esim summa1 koska ( = 0; on sama kun alustaminen eli voidaan käyttää seuraavassa komennossa ilman määritystä esim "int summa")
-                    lukumaara = 0;   // Nollataan lukumäärä
+                    summa = 0;
+                    lukumaara = 0;
 
                     Console.WriteLine("Syötä positiivisia lukuja. Negatiivinen luku lopettaa.");
 
@@ -72,21 +63,13 @@ namespace Ex6
                     {
                         Console.Write("Syötä luku: ");
                         string syote = Console.ReadLine();
+                        double luku = double.Parse(syote);  // Muutetaan syöte luvuksi
 
-                        try
-                        {
-                            double luku = double.Parse(syote);
+                        if (luku < 0)
+                            break;
 
-                            if (luku < 0)
-                                break;
-
-                            summa += luku;
-                            lukumaara++;
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Virheellinen syöte, yritä uudelleen.");
-                        }
+                        summa += luku;
+                        lukumaara++;
                     }
 
                     if (lukumaara > 0)
