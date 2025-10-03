@@ -10,7 +10,7 @@ namespace Ex6
             Console.WriteLine("Tehtävä 7: Laske keskiarvo syöttämällä positiivisia lukuja.");
             Console.WriteLine("Syötä negatiivinen luku lopettaaksesi.");
 
-            double summa = 0;       // Muuttuja lukujen summalle, ei tarvitsi määritellä muuttujaa esim summa1 koska ( = 0; on sama kun alustaminen eli voidaan käyttää seuraavassa komennossa ilman määritystä.
+            double summa = 0;       // Muuttuja lukujen summalle
             int lukumaara = 0;      // Muuttuja lukujen määrälle
 
             // Silmukka, joka pyytää lukuja kunnes negatiivinen luku syötetään
@@ -63,7 +63,7 @@ namespace Ex6
 
                 if (vastaus.ToLower() == "yes") // Jos vastaus on "yes", aloitetaan uusi keskiarvolasku
                 {
-                    summa = 0;       // Nollataan summa
+                    summa = 0;       // Nollataan summa (ei tarvitsi määritellä muuttujaa esim summa1 koska ( = 0; on sama kun alustaminen eli voidaan käyttää seuraavassa komennossa ilman määritystä esim "int summa")
                     lukumaara = 0;   // Nollataan lukumäärä
 
                     Console.WriteLine("Syötä positiivisia lukuja. Negatiivinen luku lopettaa.");
