@@ -16,7 +16,7 @@ namespace Harjoitus_3
             int currentYear = DateTime.Now.Year;
             int ika = currentYear - vuosi;
 
-            Console.WriteLine($"{nimi} {ika}, vuotta"); // Käytetty $ merkin avulla merkkijonon interpolointia
+            Console.WriteLine($"{nimi}, {ika} vuotta"); // Käytetty $ merkin avulla merkkijonon interpolointia
             Console.WriteLine("");
 
             // Tehtävä 2
@@ -54,12 +54,12 @@ namespace Harjoitus_3
                 double area = PII * r * r;
 
                 // Debuggeri antaa pilkku pisteen sijaan koska käytössä on suomalainen kieliasetus, mutta konsoli käyttää pistettä
-                Console.WriteLine($"Radius: {r:0.0}, Area: {area:0.0}, Circumference: {circumference:0.0}"); // Käytetty 0.0 formaattia, jotta saadaan yksi desimaali näkyviin
+                Console.WriteLine($"Radius: {r:0.00}, Area: {area:0.00}, Circumference: {circumference:0.00}"); // Käytetty 0.00 formaattia, jotta saadaan kaksi desimaali näkyviin
                 Console.WriteLine("");
             }
 
             // Tehtävä 4
-             
+
             /* 
             Muistiinpano
 
@@ -98,7 +98,7 @@ namespace Harjoitus_3
 
             // Tehtävä 5
 
-            // Määritellään kokonaisbittien määrä, joka halutaan muuntaa eri yksiköihin ja käytetty ulong tyyppi, jotta saadaan suuremmat luvut mahtumaan
+            // Määritellään kokonaisbittien määrä, joka halutaan muuntaa eri yksiköihin ja käytetty ulong tyyppi, jotta saadaan suuremmat luvut mahtumaan tai muuten se antaa overflow
             const ulong totalBits = 123456789123456789;
 
             // Määritellään muunnosvakiot const ulong tyyppisinä koska ei haluta muuttaa näitä arvoja ja muutettu muuttujan nimen hieman koska muutoin se antaa virhettä
