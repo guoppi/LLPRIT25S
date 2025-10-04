@@ -26,45 +26,45 @@ namespace Ex6
             // Tehtävä 2
 
             Console.Write("Anna arvo luvulle n: ");
-            int n1 = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
 
-            for (int i1 = n1; i1 >= 1; i1--)
+            for (int i = n; i >= 1; i--)
             {
-                if (i1 > 1)
-                    Console.Write(i1 + ", ");
+                if (i > 1)
+                    Console.Write(i + ", ");
                 else
-                    Console.Write(i1);
+                    Console.Write(i);
             }
             Console.WriteLine();
 
             // Tehtävä 3
 
             Console.Write("Anna jokin pieni kirjain a-z: ");
-            char kirjain2 = char.Parse(Console.ReadLine());
+            char kirjain = char.Parse(Console.ReadLine());
 
-            for (char kirjain1 =  'a'; kirjain1 <= kirjain2; kirjain1++)
+            for (char c = 'a'; c <= kirjain; c++)
             {
-            if (kirjain1 < kirjain2)
-                    Console.Write(kirjain1 + ", ");
+                if (c < kirjain)
+                    Console.Write(c + ", ");
                 else
-                    Console.Write(kirjain1);
+                    Console.Write(c);
             }
             Console.WriteLine();
 
             // Tehtävä 4
 
             Console.Write("Anna ensimmäinen kirjain: ");
-            char A1 = char.Parse(Console.ReadLine());
+            kirjain = char.Parse(Console.ReadLine());
 
             Console.Write("Anna toinen kirjain: ");
-            char A2 = char.Parse(Console.ReadLine());
+            char toinenKirjain = char.Parse(Console.ReadLine());
 
-            if (A1 < A2)
+            if (kirjain < toinenKirjain)
             {
-                for (char c = A1; c <= A2; c++)
+                for (char c = kirjain; c <= toinenKirjain; c++)
                 {
                     Console.Write(c);
-                    if (c != A2)
+                    if (c != toinenKirjain)
                     {
                         Console.Write(", ");
                     }
@@ -72,10 +72,10 @@ namespace Ex6
             }
             else
             {
-                for (char c = A1; c >= A2; c--)
+                for (char c = kirjain; c >= toinenKirjain; c--)
                 {
                     Console.Write(c);
-                    if (c != A2)
+                    if (c != toinenKirjain)
                     {
                         Console.Write(", ");
                     }
