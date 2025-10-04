@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using System.Text;
 
 namespace Ex6
 {
@@ -8,47 +6,49 @@ namespace Ex6
     {
         static void Main(string[] args)
         {
-            // Tehtävä 5
-            
-            int luku;
-            do
-            {
-                luku = int.Parse(Console.ReadLine());
+            // TEHTÄVÄ 5: Lasketaan luvun neliö niin kauan kuin syötetty luku on positiivinen
 
-                if (luku >= 0)
-                {
-                    int nelio = luku * luku;
-                    Console.WriteLine(nelio);
-                }
-            }
-            while (luku >= 0);
-            
-
-            // Tehtävä 6
-
-            luku = 0;   // alustetaan muuttujan "luku"
-            int pienin = int.MaxValue;
-            int suurin = int.MinValue;
+            int luku; // Luodaan muuttuja luvulle
 
             do
             {
-                luku = int.Parse(Console.ReadLine());
+                luku = int.Parse(Console.ReadLine()); // Luetaan käyttäjältä luku
 
-                if (luku >= 0)
+                if (luku >= 0) // Tarkistetaan että luku on positiivinen
                 {
-                    if (luku < pienin)
+                    int nelio = luku * luku; // Lasketaan luvun neliö
+                    Console.WriteLine(nelio); // Tulostetaan neliö
+                }
+            }
+            while (luku >= 0); // Toistetaan niin kauan kuin luku on positiivinen
+
+
+            // TEHTÄVÄ 6: Etsitään pienin ja suurin positiivinen luku käyttäjän syötteistä
+
+            luku = 0; // Alustetaan luku nollaksi
+            int pienin = int.MaxValue; // Alustetaan pienin mahdollisimman suureksi
+            int suurin = int.MinValue; // Alustetaan suurin mahdollisimman pieneksi
+
+            do
+            {
+                luku = int.Parse(Console.ReadLine()); // Luetaan uusi luku
+
+                if (luku >= 0) // Jos luku on positiivinen
+                {
+                    if (luku < pienin) // Jos luku on pienempi kuin nykyinen pienin
                     {
-                        pienin = luku;
+                        pienin = luku; // Päivitetään pienin
                     }
-                    if (luku > suurin)
+                    if (luku > suurin) // Jos luku on suurempi kuin nykyinen suurin
                     {
-                        suurin = luku;
+                        suurin = luku; // Päivitetään suurin
                     }
                 }
             }
-            while (luku >= 0);
-            Console.WriteLine(pienin);
-            Console.WriteLine(suurin);
+            while (luku >= 0); // Toistetaan kunnes saadaan negatiivinen luku
+
+            Console.WriteLine(pienin); // Tulostetaan pienin syötetty positiivinen luku
+            Console.WriteLine(suurin); // Tulostetaan suurin syötetty positiivinen luku
         }
     }
 }
