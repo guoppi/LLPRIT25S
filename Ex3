@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Harjoitus_3
 {
@@ -11,129 +10,98 @@ namespace Harjoitus_3
     {
         static void Main(string[] args)
         {
-            // Tehtävä 1
+            // TEHTÄVÄ 1 – Lasketaan ikä
+            string nimi = "Jatu Orasan"; // Tallennetaan nimi
+            int arvo = 1995; // Syntymävuosi tallennetaan muuttujaan "arvo"
+            arvo = DateTime.Now.Year - arvo; // Lasketaan ikä vähentämällä syntymävuosi nykyvuodesta
+            Console.WriteLine($"{nimi}, {arvo} vuotta"); // Tulostetaan nimi ja ikä
+            Console.WriteLine();
 
-            string nimi = "Jatu Orasan";
-            int vuosi = 1995;
-            int currentYear = DateTime.Now.Year;
-            int ika = currentYear - vuosi;
+            // TEHTÄVÄ 2 – Lasketaan jalat, sormet, joukkueet ja pallot
+            const int JALKAA = 2, SORMIA = 10, PELAAJAA = 11, PALLOJA = 3; // Vakioarvot ihmiskehon ja jalkapallon logiikkaan
+            int[] henkiloita = { 100, 123456789 }; // Kaksi erilaista henkilömääriä testattavaksi
 
-            Console.WriteLine($"{nimi}, {ika} vuotta"); // Käytetty $ merkin avulla merkkijonon interpolointia
-            Console.WriteLine("");
-
-            // Tehtävä 2
-
-            // Määritellään vakioita, joita käytetään myöhemmin laskelmissa
-            const int JALKAA = 2;
-            const int SORMIA = 10;
-            const int PELAAJAA = 11;
-            const int PALLOJA = 3;
-
-            int[] henkiloita = { 100, 123456789 }; // Määritellään henkilömääriä, joita käytetään laskelmissa
-
-            foreach (int henkilomaara in henkiloita) // Käytetään foreach-silmukkaa, joka on kätevä kun halutaan käydä läpi kokoelma ja suorittaa sama operaatio jokaiselle alkiolle
+            foreach (int henkilomaara in henkiloita) // Käydään läpi jokainen henkilöluku
             {
-                int jalat = henkilomaara * JALKAA;
-                int sormet = henkilomaara * SORMIA;
-                int joukkueidenMaara = henkilomaara / PELAAJAA;
-                int ylimaaraisetPelaajat = henkilomaara % PELAAJAA;
-                int pallojenMaara = joukkueidenMaara * PALLOJA;
+                arvo = henkilomaara * JALKAA; // Lasketaan jalkojen määrä
+                Console.WriteLine($"{henkilomaara} persons have {arvo} feet");
 
-                Console.WriteLine($"{henkilomaara} persons have {jalat} feet and {sormet} fingers");
-                Console.WriteLine($"{henkilomaara} persons form {joukkueidenMaara} teams and {ylimaaraisetPelaajat} persons are left out");
-                Console.WriteLine($"{joukkueidenMaara} football teams require {pallojenMaara} balls");
-                Console.WriteLine(); // Lisätty tyhjä rivi erottelun helpottamiseksi
+                arvo = henkilomaara * SORMIA; // Lasketaan sormien määrä
+                Console.WriteLine($"{henkilomaara} persons have {arvo} fingers");
+
+                arvo = henkilomaara / PELAAJAA; // Lasketaan kuinka monta joukkuetta voidaan muodostaa
+                int jaannos = henkilomaara % PELAAJAA; // Selvitetään montako jää yli
+                Console.WriteLine($"{henkilomaara} persons form {arvo} teams and {jaannos} persons are left out");
+
+                arvo *= PALLOJA; // Lasketaan pallojen määrä joukkueiden mukaan
+                Console.WriteLine($"{arvo} balls are needed");
+                Console.WriteLine();
             }
 
-            //Tehtävä 3
-
-            const double PII = 3.14159; // Määritellään pii vakiona
-            double[] radius = { 1, 5, 10 }; // Määritellään säteitä, joita käytetään laskelmissa
+            // TEHTÄVÄ 3 – Lasketaan ympyrän pinta-ala ja piiri
+            const double PII = 3.14159; // Piin arvo
+            double[] radius = { 1, 5, 10 }; // Kolme eri säteen arvoa
+            double arvoDouble; // Yksi muuttuja, jota käytetään sekä piiriin että pinta-alaan
 
             foreach (double r in radius)
             {
-                double circumference = 2 * PII * r;
-                double area = PII * r * r;
+                arvoDouble = 2 * PII * r; // Piiri
+                double piiri = arvoDouble;
 
-                // Debuggeri antaa pilkku pisteen sijaan koska käytössä on suomalainen kieliasetus, mutta konsoli käyttää pistettä
-                Console.WriteLine($"Radius: {r:0.00}, Area: {area:0.00}, Circumference: {circumference:0.00}"); // Käytetty 0.00 formaattia, jotta saadaan kaksi desimaali näkyviin
-                Console.WriteLine("");
+                arvoDouble = PII * r * r; // Pinta-ala
+                double ala = arvoDouble;
+
+                // Tulostetaan säde, pinta-ala ja piiri kahden desimaalin tarkkuudella
+                Console.WriteLine($"Radius: {r:0.00}, Area: {ala:0.00}, Circumference: {piiri:0.00}");
+                Console.WriteLine();
             }
 
-            // Tehtävä 4
+            // TEHTÄVÄ 4 – Muunnetaan bittimäärät eri yksiköissä
+            arvo = 8; // Yksi tavu = 8 bittiä
+            arvo = 1024 * arvo; // Kilotavun bittimäärä
+            Console.WriteLine($"1 Kilobyte has {arvo} bits");
 
-            /* 
-            Muistiinpano
+            arvo = 1024 * arvo; // Megatavun bittimäärä
+            Console.WriteLine($"1 Megabyte has {arvo} bits");
 
-            1 byte = 8 bits
-            1 kilobyte = 1024 byte
-            1 megabyte = 1024 kilobyte
-            1 gigabyte =  1024 megabyte
-            1 terabyte = 1024 gigabyte
+            arvo = 1024 * arvo; // Gigatavun bittimäärä
+            Console.WriteLine($"1 Gigabyte has {arvo} bits");
 
-            bitsPerTerabyte = 1024 * 1024 * 1024 * 1024 * 8
-            bitsPerGigabyte = 1024 * 1024 * 1024 *8
-            bitsPerMegabyte = 1024 * 1024 * 8
-            bitsPerKilobyte = 1024 * 8
-            bitsPerByte = 8
-            */
+            arvo = 1024 * arvo; // Teratavun bittimäärä
+            Console.WriteLine($"1 Terabyte has {arvo} bits");
 
-            // Määritellään muunnosvakiot integer tyyppisinä koska nämä arvot ovat vielä pieniä ja mahtuvat integer tyyppiin
-            int bitsInByte = 8;
-            int bytesInKilobyte = 1024;
-            int kilobytesInMegabyte = 1024;
-            int megabytesInGigabyte = 1024;
-            int gigabytesInTerabyte = 1024;
-
-            // Lasketaan bittien määrä eri yksiköissä kertomalla muunnosvakiot ja käytetty long tyyppi, jotta saadaan suuremmat luvut mahtumaan
-            long bitsInKilobyte = bytesInKilobyte * bitsInByte;
-            long bitsInMegabyte = kilobytesInMegabyte * bitsInKilobyte;
-            long bitsInGigabyte = megabytesInGigabyte * bitsInMegabyte;
-            long bitsInTerabyte = gigabytesInTerabyte * bitsInGigabyte;
-
-            Console.WriteLine($"1 Terabyte has {bitsInTerabyte} bits");
-            Console.WriteLine($"1 Gigabyte has {bitsInGigabyte} bits");
-            Console.WriteLine($"1 Megabyte has {bitsInMegabyte} bits");
-            Console.WriteLine($"1 Kilobyte has {bitsInKilobyte} bits");
-            Console.WriteLine($"1 byte has {bitsInByte} bits");
+            Console.WriteLine($"1 byte has 8 bits");
             Console.WriteLine();
 
-            // Tehtävä 5
-
-            // Määritellään kokonaisbittien määrä, joka halutaan muuntaa eri yksiköihin ja käytetty ulong tyyppi, jotta saadaan suuremmat luvut mahtumaan sekä halutaa varmistaa että tulos on "vain" positiivinen
-            // sillä bitit eivät voi olla negatiivisia. Long olisi myös käynyt muuta se sallii myös negatiivisia lukuja.
-            const ulong totalBits = 123456789123456789;
-
-            // Määritellään muunnosvakiot const ulong tyyppisinä koska ei haluta muuttaa näitä arvoja ja muutettu muuttujan nimen hieman koska muutoin se antaa virhettä
+            // TEHTÄVÄ 5 – Muunnetaan suuri bittimäärä eri yksiköihin
+            const ulong totalBits = 123456789123456789; // Kokonaisbittimäärä
             const ulong bitsPerTerabytes = 1024UL * 1024 * 1024 * 1024 * 8;
             const ulong bitsPerGigabytes = 1024UL * 1024 * 1024 * 8;
             const ulong bitsPerMegabytes = 1024UL * 1024 * 8;
             const ulong bitsPerKilobytes = 1024UL * 8;
             const ulong bitsPerBytes = 8;
 
-            ulong terabytes = totalBits / bitsPerTerabytes; // Kokonaislukujako teratavuiksi
-            ulong remainder = totalBits % bitsPerTerabytes; // Jakojäännös teratavuista
+            ulong arvoUlong = totalBits / bitsPerTerabytes; // Teratavujen määrä
+            Console.WriteLine($"{arvoUlong} terabytes");
+            ulong remainder = totalBits % bitsPerTerabytes; // Jakojäännös
 
-            ulong gigabytes = remainder / bitsPerGigabytes; // Kokonaislukujako gigatavuiksi
-            remainder %= bitsPerGigabytes; // Päivitetään jakojäännös gigatavuista ja käytetty %= operaattoria lyhentämään koodia
-                                           // joka on sama kuin remainder = remainder % bitsPerGigabytes
+            arvoUlong = remainder / bitsPerGigabytes; // Gigatavujen määrä
+            Console.WriteLine($"{arvoUlong} gigabytes");
+            remainder %= bitsPerGigabytes;
 
-            ulong megabytes = remainder / bitsPerMegabytes; // Kokonaislukujako megatavuiksi
-            remainder %= bitsPerMegabytes; // Päivitetään jakojäännös megatavuista
+            arvoUlong = remainder / bitsPerMegabytes; // Megatavujen määrä
+            Console.WriteLine($"{arvoUlong} megabytes");
+            remainder %= bitsPerMegabytes;
 
-            ulong kilobytes = remainder / bitsPerKilobytes; // Kokonaislukujako kilotavuiksi
-            remainder %= bitsPerKilobytes; // Päivitetään jakojäännös kilotavuista
+            arvoUlong = remainder / bitsPerKilobytes; // Kilotavujen määrä
+            Console.WriteLine($"{arvoUlong} kilobytes");
+            remainder %= bitsPerKilobytes;
 
-            ulong bytes = remainder / bitsPerBytes; // Kokonaislukujako tavuiksi
-            ulong bits = remainder % bitsPerBytes; // Loput bitit
+            arvoUlong = remainder / bitsPerBytes; // Tavujen määrä
+            Console.WriteLine($"{arvoUlong} bytes");
 
-            Console.WriteLine($"{totalBits} bits correspond to");
-            Console.WriteLine($"{terabytes} terabytes");
-            Console.WriteLine($"{gigabytes} gigabytes");
-            Console.WriteLine($"{megabytes} megabytes");
-            Console.WriteLine($"{kilobytes} kilobytes");
-            Console.WriteLine($"{bytes} bytes");
-            Console.WriteLine($"and {bits} bits");
+            arvoUlong = remainder % bitsPerBytes; // Jäljelle jäävät bitit
+            Console.WriteLine($"and {arvoUlong} bits");
         }
     }
 }
