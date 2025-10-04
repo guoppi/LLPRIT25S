@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -27,27 +26,27 @@ namespace Ex6
 
             // Tehtävä 6
 
-            int luku1;
+            luku = 0;   // alustetaan muuttujan "luku"
             int pienin = int.MaxValue;
             int suurin = int.MinValue;
 
             do
             {
-                luku1 = int.Parse(Console.ReadLine());
+                luku = int.Parse(Console.ReadLine());
 
-                if (luku1 >= 0)
+                if (luku >= 0)
                 {
-                    if (luku1 < pienin)
+                    if (luku < pienin)
                     {
-                        pienin = luku1;
+                        pienin = luku;
                     }
-                    if (luku1 > suurin)
+                    if (luku > suurin)
                     {
-                        suurin = luku1;
+                        suurin = luku;
                     }
                 }
             }
-            while (luku1 >= 0);
+            while (luku >= 0);
             Console.WriteLine(pienin);
             Console.WriteLine(suurin);
         }
