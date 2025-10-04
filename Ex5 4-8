@@ -9,18 +9,18 @@ namespace Ex5
     {
         static void Main(string[] args)
         {
-            // Tehtävä 4
+            // Tehtävä 4 – Celsius → Fahrenheit muunnos
 
             Console.Write("Enter temperature in Celsius: ");
-            string input = Console.ReadLine().Replace('.', ',');
-            double celsius = Convert.ToDouble(input);
-            double fahrenheit = celsius * 9 / 5 + 32;
+            string input = Console.ReadLine().Replace('.', ','); // Vaihdetaan piste pilkuksi, jotta toimii suomalaisessa desimaalimuodossa
+            double celsius = Convert.ToDouble(input); // Muutetaan syöte double-tyyppiseksi
+            double fahrenheit = celsius * 9 / 5 + 32; // Muunnoskaava Fahrenheitiksi
             Console.WriteLine();
-            Console.WriteLine("{0,-12}{1,12}", "Fahrenheit", "Celsius");
-            Console.WriteLine("{0,-12:F1}{1,12:F2}", fahrenheit, celsius);
+            Console.WriteLine("{0,-12}{1,12}", "Fahrenheit", "Celsius"); // Otsikkorivi muotoiltuna
+            Console.WriteLine("{0,-12:F1}{1,12:F2}", fahrenheit, celsius); // Tulostetaan arvot muotoiltuna
             Console.WriteLine();
 
-            // Tehtävä 5
+            // Tehtävä 5 – Monimutkainen laskukaava
 
             Console.Write("Enter x: ");
             double x = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
@@ -30,12 +30,14 @@ namespace Ex5
             double z = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
             Console.Write("Enter w: ");
             double w = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+
+            // Lasketaan kaavan mukainen arvo
             double tulos = (10 + x) / (9 * x + 2) - 4 * (x / y) + (z * 3 + w) / (z / x + y);
             Console.WriteLine();
-            Console.WriteLine($"f({x},{y},{z},{w}) = {tulos}");
+            Console.WriteLine($"f({x},{y},{z},{w}) = {tulos}"); // Tulostetaan laskettu arvo
             Console.WriteLine();
 
-            // Tehtävä 6
+            // Tehtävä 6 – Muuttujien manipulointi
 
             Console.Write("Enter value i: ");
             int i = Convert.ToInt32(Console.ReadLine());
@@ -47,16 +49,17 @@ namespace Ex5
 
             i++;                // i = i + 1;
             i++; j += i;        // i = i + 1; j = j + i;
-            k *= i * j; k++;    //k = k * i * j; k = k + 1; 
+            k *= i * j; k++;    // k = k * i * j; k = k + 1; 
             j--; i += j + k;    // j = j - 1; i = i + (j + k); 
             ++j; k -= j;        // j = j + 1; k = k - j;
 
+            // Tulostetaan lopulliset arvot
             Console.WriteLine(i);
             Console.WriteLine(j);
             Console.WriteLine(k);
             Console.WriteLine();
 
-            // Tehtävä 7
+            // Tehtävä 7 – Lisää laskutoimituksia
 
             Console.Write("Enter a value: ");
             int a = Convert.ToInt32(Console.ReadLine());
@@ -66,23 +69,25 @@ namespace Ex5
             int c = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            c = c + 1;      //c++;
-            c = c + 1;      //b += ++c + c;
+            c = c + 1;      // c++;
+            c = c + 1;      // b += ++c + c;
             b = b + c + c;
             a = a - b;      // a -= b++;
             b = b + 1;
-            a = a + 1;       //++a;
+            a = a + 1;      // ++a;
 
+            // Tulostetaan lopulliset arvot
             Console.WriteLine(a);
             Console.WriteLine(b);
             Console.WriteLine(c);
 
-            // Tehtävä 8
+            // Tehtävä 8 – Muotoilumerkkijonon rakentaminen
 
             int n = 0, w2 = 10;
-            string myFormatCode = "{" + n++ + "," + -w2 + "}"; // Tässä käytetään n ja w2 arvoja muotoilumerkkijonon rakentamiseen,
-            myFormatCode += "{" + n + "," + w2 + "}";
-            Console.WriteLine(myFormatCode, n, w2); 
+            string myFormatCode = "{" + n++ + "," + -w2 + "}"; // Rakennetaan muotoilumerkkijono, jossa n=0 ja w2=-10
+            myFormatCode += "{" + n + "," + w2 + "}";           // Lisätään toinen osa: n=1 ja w2=10
+            Console.WriteLine(myFormatCode, n, w2);             // Tulostetaan muotoilumerkkijonon mukaisesti
+
             // myFormatCode sisältää rakenteen eli tasaus- ja leveystiedot (esim. {0,-10}{1,10}),
             // ja n sekä w2 ovat ne arvot, jotka sijoitetaan siihen. Format-koodi tulee ensin,
             // koska se määrittää, miten arvot esitetään tulostuksessa.
@@ -98,10 +103,6 @@ namespace Ex5
             // Molempia muuttujia (n ja w2) käytettiin sekä muotoilumerkkijonon rakentamiseen että tulostukseen,
             // koska muotoilussa määritellään vain rakenne (esim. tasaus ja leveys), ja arvot annetaan erikseen.
             // Tämä tapa selkeyttää koodin ja voidaan uudelleenkäyttää, eikä samoja muuttujia tarvitse määritellä uudelleen.
-
-
-
-
         }
     }
 }
