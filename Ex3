@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 
 namespace Harjoitus_3
 {
@@ -98,7 +100,8 @@ namespace Harjoitus_3
 
             // Tehtävä 5
 
-            // Määritellään kokonaisbittien määrä, joka halutaan muuntaa eri yksiköihin ja käytetty ulong tyyppi, jotta saadaan suuremmat luvut mahtumaan tai muuten se antaa overflow
+            // Määritellään kokonaisbittien määrä, joka halutaan muuntaa eri yksiköihin ja käytetty ulong tyyppi, jotta saadaan suuremmat luvut mahtumaan sekä halutaa varmistaa että tulos on "vain" positiivinen
+            // sillä bitit eivät voi olla negatiivisia. Long olisi myös käynyt muuta se sallii myös negatiivisia lukuja.
             const ulong totalBits = 123456789123456789;
 
             // Määritellään muunnosvakiot const ulong tyyppisinä koska ei haluta muuttaa näitä arvoja ja muutettu muuttujan nimen hieman koska muutoin se antaa virhettä
