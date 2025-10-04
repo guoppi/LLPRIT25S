@@ -64,22 +64,26 @@ namespace Ex4
                 Console.WriteLine(myString + " not with explicit casting, but with Convert object");
                 Console.WriteLine();
 
-                // Tehtävä 3 – Merkkijonon muuntaminen numeerisiksi arvoiksi
+                // Tehtävä 3 – Merkkijonon muuntaminen numeerisiksi arvoiksi ilman CultureInfoa
 
-                string origNr = "293,34"; // Käytetään pilkkua suomalaisessa desimaalimuodossa
-                CultureInfo fi = new CultureInfo("fi-FI"); // Määritellään suomalainen kulttuuri, jotta pilkku toimii desimaalierottimena
+                string origNr = "293,34";
 
-                float floatNr = Convert.ToSingle(origNr, fi); // Muunnetaan floatiksi
-                double doubleNr = Convert.ToDouble(origNr, fi); // Muunnetaan doubleksi
-                decimal decimalNr = Convert.ToDecimal(origNr, fi); // Muunnetaan decimaliksi
-                string stringNr = origNr; // Merkkijono pysyy samana
+                // Korvataan pilkku pisteellä, jotta desimaalierotin toimii oletuskulttuurissa (esim. en-US)
+                origNr = origNr.Replace(',', '.');
 
-                Console.WriteLine("Byte type is NOT ok"); // Ei voida muuntaa suoraan
-                Console.WriteLine("Int type is NOT ok"); // Ei voida muuntaa suoraan
+                // Muunnetaan merkkijono eri numeerisiin tyyppeihin
+                float floatNr = Convert.ToSingle(origNr);      // Muuntaa floatiksi
+                double doubleNr = Convert.ToDouble(origNr);    // Muuntaa doubleksi
+                decimal decimalNr = Convert.ToDecimal(origNr); // Muuntaa decimaliksi
+                string stringNr = origNr;                      // Merkkijono pysyy samana
+
+                // Tulostetaan tulokset
+                Console.WriteLine("Byte type is NOT ok");      // Ei voida muuntaa suoraan
+                Console.WriteLine("Int type is NOT ok");       // Ei voida muuntaa suoraan
                 Console.WriteLine("Float type is ok: " + floatNr);
                 Console.WriteLine("Double type is ok: " + doubleNr);
                 Console.WriteLine("Decimal type is ok: " + decimalNr);
-                Console.WriteLine("Boolean type is NOT ok"); // Ei voida muuntaa suoraan
+                Console.WriteLine("Boolean type is NOT ok");   // Ei voida muuntaa suoraan
                 Console.WriteLine("String type is ok: " + stringNr);
                 Console.WriteLine();
 
