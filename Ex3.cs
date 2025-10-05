@@ -10,8 +10,8 @@ namespace Harjoitus_3
         static void Main(string[] args)
         {
             // TEHTÄVÄ 1 – Lasketaan ikä
-            string nimi = "Jatu Orasan"; // Tallennetaan nimi
-            int arvo = 1995; // Syntymävuosi tallennetaan muuttujaan "arvo"
+            string nimi = "Meow Uwu"; // Tallennetaan nimi
+            int arvo = 2000; // Syntymävuosi tallennetaan muuttujaan "arvo"
             arvo = DateTime.Now.Year - arvo; // Lasketaan ikä vähentämällä syntymävuosi nykyvuodesta
             Console.WriteLine($"{nimi}, {arvo} vuotta"); // Tulostetaan nimi ja ikä
             Console.WriteLine();
