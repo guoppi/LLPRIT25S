@@ -70,7 +70,7 @@ namespace Ex4
                 origNr = origNr.Replace(',', '.');
 
                 // Muunnetaan merkkijono eri numeerisiin tyyppeihin
-                float floatNr = Convert.ToSingle(origNr);      // Muuntaa floatiksi
+                float floatNr = Convert.ToSingle(origNr);      // Muuntaa floatiksi. Convert.ToFloat ei ole olemassa, vaan Single on floatin virallinen nimi C#:ssa.
                 double doubleNr = Convert.ToDouble(origNr);    // Muuntaa doubleksi
                 decimal decimalNr = Convert.ToDecimal(origNr); // Muuntaa decimaliksi
                 string stringNr = origNr;                      // Merkkijono pysyy samana
