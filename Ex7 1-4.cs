@@ -21,8 +21,8 @@ namespace Ex6
                 else
                     Console.Write(i); // Viimeinen luku ilman pilkkua
             }
-            Console.WriteLine(); // Rivinvaihto HUOM, muista tämä jos edellinen tulostus on pelkästään Console.Write(), muuten se tulostaa
-                                // Seuraavan Console.Write() heti edellisen tulostuksen jälkeen
+            Console.WriteLine(); // Rivinvaihto, HUOM! muista tämä jos edellinen tulostus on pelkästään Console.Write(), muuten se tulostaa
+                                 // edellisen Console.Write() eteen eli jatkaa tulostus.
 
             // TEHTÄVÄ 2: Tulostetaan luvut n:stä 1:een
 
