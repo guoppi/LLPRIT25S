@@ -23,7 +23,8 @@ namespace Ex6
                 double luku = double.Parse(syote);         // Muutetaan syöte luvuksi
 
                 if (luku < 0)                               // Negatiivinen luku lopettaa
-                    break;
+                    break; // HUOMIO, jos käyttää aaltosulku, niin pitää olla tarkkana breakin kanssa missä kohdassa laittaa
+                           // Esim jos aaltosulku alkaa ennen break ja loppuu laskutoimituksen jälkeen, c# ei lue laskutoimitusa ollenkaan ja antaa error
 
                 summa += luku;                             // Lisätään luku summaan
                 lukumaara++;                               // Kasvatetaan lukumäärää
