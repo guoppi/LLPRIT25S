@@ -9,7 +9,7 @@ namespace Ex6
     {
         static void Main(string[] args)
         {
-            // --- Tehtävä 1 ---
+            // Tehtävä 1
             // Pyydetään käyttäjältä kokonaisluku
             Console.WriteLine("Tehtävä 1: Tulostetaan luvut, jotka ovat n:n monikertoja ja alle 100.");
             Console.Write("Anna kokonaisluku n: ");
@@ -26,7 +26,7 @@ namespace Ex6
 
             Console.WriteLine(); // Tyhjä rivi
 
-            // --- Tehtävä 2 ---
+            // Tehtävä 2
             // Pyydetään uusi kokonaisluku
             Console.WriteLine("Tehtävä 2: Tulostetaan kuvio, jossa rivillä i on i kappaletta n-arvoja.");
             Console.Write("Anna kokonaisluku n: ");
@@ -42,8 +42,8 @@ namespace Ex6
                 Console.WriteLine(); // Siirrytään seuraavalle riville
             }
 
-            Console.WriteLine(); // Tyhjä rivi
-            // --- Tehtävä 3 ja 4 ---
+            Console.WriteLine();
+            //Tehtävä 3 ja 4
             // Luodaan taulukko nimille
             Console.WriteLine("Tehtävä 3 ja 4: Syötä 10 nimeä. Tulostetaan nimet normaalisti ja käänteisesti.");
             string[] nimet = new string[10];
@@ -70,7 +70,7 @@ namespace Ex6
                 }
             }
 
-            Console.WriteLine(); // Lopuksi tyhjä rivi
+            Console.WriteLine();
         }
     }
 }
