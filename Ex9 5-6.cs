@@ -51,6 +51,11 @@ namespace Ex6
             {
                 if (!string.IsNullOrEmpty(nimet[indeksi]) && // Tarkistetaan että nimi ei ole tyhjä
                     nimet[indeksi].Equals(haettavaNimi, StringComparison.OrdinalIgnoreCase)) // Verrataan nimiä kirjainkoolla ei ole väliä.
+                                                                                             // Voidaan myös käyttää vertailuna esim. if syote == x, tee näin mutta
+                                                                                             // koska kyseessä string ja se voi sisältää sekä pieniä että isoja kirjaimia
+                                                                                             // niin pitää sit lisätä erikseen To.Lower tai To.Upper
+                                                                                             // jotta syöte olis kelvollinen toimintoa mutta jos haluaa pitää koodin lyhyeenä ja siistinä
+                                                                                             // niin StringComparison
                 {
                     Console.WriteLine($"{tunnusluvut[indeksi]}: {nimet[indeksi]}"); // Tulostetaan henkilön tunnusluku ja nimi.
                     loytyi = true; // Merkitään että löytyi.
