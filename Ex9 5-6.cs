@@ -55,7 +55,8 @@ namespace Ex6
                                                                                              // koska kyseessä string ja se voi sisältää sekä pieniä että isoja kirjaimia
                                                                                              // niin pitää sit lisätä erikseen To.Lower tai To.Upper
                                                                                              // jotta syöte olis kelvollinen toimintoa mutta jos haluaa pitää koodin lyhyeenä ja siistinä
-                                                                                             // niin StringComparison
+                                                                                             // niin StringComparison on helpoin sillä se nimenomaa ei ota kirjan kokoa huomioon
+                                                                                             // Tosin jos kyseessä salasana niin sitten ei tälläisellä metodilla
                 {
                     Console.WriteLine($"{tunnusluvut[indeksi]}: {nimet[indeksi]}"); // Tulostetaan henkilön tunnusluku ja nimi.
                     loytyi = true; // Merkitään että löytyi.
