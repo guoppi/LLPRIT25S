@@ -5,6 +5,7 @@ namespace Programs
     {
         //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
         //SO -- > Replace the word static with word public to make the test program compile
+        // Ei mitää hajua miten saatu tän tehtyy, ottakkae selvää sitten xd
         public void ExampleSubroutine()
         {
             //No need to remove this subroutine
