@@ -5,11 +5,10 @@ namespace Programs
     {
         //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
         //SO -- > Replace the word static with word public to make the test program compile
-        // Ei mitää hajua miten saatu tän tehtyy, ottakkae selvää sitten xd
         public void ExampleSubroutine()
         {
-            //No need to remove this subroutine
-                    // Testataan OSquare4 viisi kertaa
+        //No need to remove this subroutine
+        // Testataan OSquare4 viisi kertaa
         int count = 0;
         while (count < 5)
         {
@@ -55,69 +54,67 @@ namespace Programs
         
         
         //Enter your subroutines here, just as is, on by one and run the test
-            public void OSquare4()
+        public void OSquare4()
+        {
+            for (int i = 0; i < 4; i++)
             {
-                for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++)
                 {
-                    for (int j = 0; j < 4; j++)
-                    {
-                        Console.Write("o");
-                    }
-                    Console.WriteLine();
+                    Console.Write("o");
                 }
+                Console.WriteLine();
             }
+        }
 
-            public void OSquareN(int n)
+        public void OSquareN(int n)
+        {
+            for (int i = 0; i < n; i++)
             {
-                for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
                 {
-                    for (int j = 0; j < n; j++)
-                    {
-                        Console.Write("o");
-                    }
-                    Console.WriteLine();
+                    Console.Write("o");
                 }
+                Console.WriteLine();
             }
+        }
 
-            public void XSquareN(int n, char merkki)
+        public void XSquareN(int n, char merkki)
+        {
+            for (int i = 0; i < n; i++)
             {
-                for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
                 {
-                    for (int j = 0; j < n; j++)
-                    {
-                    Console.Write(merkki);
-                    }
-                    Console.WriteLine();
+                Console.Write(merkki);
                 }
+                Console.WriteLine();
             }
+        }
 
-            public string GetXSquareN(int n, char merkki)
+        public string GetXSquareN(int n, char merkki)
+        {
+            string tulos = "";
+            for (int i = 0; i < n; i++)
             {
-                string tulos = "";
-                for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
                 {
-                    for (int j = 0; j < n; j++)
-                    {
-                        tulos += merkki;
-                    }
-                    tulos += "\n";
+                    tulos += merkki;
                 }
-                return tulos;
+                tulos += "\n";
             }
+            return tulos;
+        }
 
-            public void OutputSum(double a, double b)
-            {
-                double summa = a + b;
-                Console.WriteLine("Summa: " + summa);
-            }
+        public void OutputSum(double a, double b)
+        {
+            double summa = a + b;
+            Console.WriteLine("Summa: " + summa);
+        }
 
-            public double Sum(double a, double b)
-            {
-                return a + b;
-            }
+        public double Sum(double a, double b)
+        {
+            return a + b;
+        }
         
-
-
 //NOTE: DO NOT ERASE ANYTHING BELOW THIS LINE---------------------------------        
     }
 }
