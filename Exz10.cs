@@ -5,6 +5,7 @@ class Program
     static void Main() // Ohjelman aloituspaikka. Tämä suoritetaan ensimmäisenä kun ohjelma käynnistyy.
                        // Eli iha alkuun selvennöksenä, Main on ohjelman aloituspiste, ja aliohjelma on erillinen osa, joka suorittaa tietyn tehtävän mikä on tuolla alhaalla.
     {
+        //Tehtävä 1
         // Testataan OSquare4 viisi kertaa
         int count = 0; // Alustetaan laskuri count arvolla 0.
         while (count < 5) // Toistetaan niin kauan kuin count on alle 5.
@@ -47,6 +48,7 @@ class Program
         Console.WriteLine("Summa: " + result2); // Tulostetaan laskettu summa.
     }
 
+    // Tehtävä 1 aliohjelma
     // Aliohjelma, joka piirtää 4x4 neliön kirjaimilla 'o'.
     static void OSquare4()
     {
