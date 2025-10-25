@@ -20,6 +20,7 @@ namespace ConsoleApplication1
             Console.WriteLine("There are " + PASSENGERS + " passengers");
             Console.WriteLine("One hundred km drive consumes " + FUEL + " liters of gasoline per kilometer");
             Console.WriteLine("Distance to the sun is " + DISTANCE + " kilometers");
+            // Voidaan myös tulostaa muodossa ($"Distance to the sun is {DISTANCE} kilometers"); näin ollen ei tarvitse laittaa "+" tai "" merkkejä ja lyhentää huomattavasti joitakin tulostuksia.
 
             string state = "South Karelia"; // string because of its letter
             int population = 124394; // int because population is integer
