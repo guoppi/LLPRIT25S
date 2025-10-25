@@ -1,6 +1,6 @@
-using System; // Tuodaan käyttöön System-kirjasto, joka sisältää esim. Console-luokan tulostusta varten.
+using System;
 
-class Program // Luodaan luokka nimeltä Program. Kaikki koodi on tämän sisällä.
+class Program
 {
     static void Main() // Ohjelman aloituspaikka. Tämä suoritetaan ensimmäisenä kun ohjelma käynnistyy.
     {
