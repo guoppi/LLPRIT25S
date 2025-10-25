@@ -18,7 +18,7 @@ namespace Harjoitus_3
 
             // TEHTÄVÄ 2 – Lasketaan jalat, sormet, joukkueet ja pallot
             const int JALKAA = 2, SORMIA = 10, PELAAJAA = 11, PALLOJA = 3; // Vakioarvot ihmiskehon ja jalkapallon logiikkaan
-            int[] henkiloita = { 100, 123456789 }; // Kaksi erilaista henkilömääriä testattavaksi
+            int[] henkiloita = { 100, 123456789 }; // Kaksi erilaista henkilömääriä testattavaksi Huom! tällä int[] = taulukko eli käy läpi 100 ja 123456789 mitä ei olla vielä matskussa
 
             foreach (int henkilomaara in henkiloita) // Käydään läpi jokainen henkilöluku
             {
@@ -36,6 +36,48 @@ namespace Harjoitus_3
                 Console.WriteLine($"{arvo} balls are needed");
                 Console.WriteLine();
             }
+            /* Tältä näyttää miltä koodi näyttää ilman taulukkoa ja foreach. Huomattavasti lyhyempi toi ylempi.
+            
+            const int JALKAA = 2;
+            const int SORMIA = 10;
+            const int PELAAJAA = 11;
+            const int PALLOJA = 3;
+
+            // Ensimmäinen henkilöluku
+            int henkilomaara = 100;
+
+            int arvo = henkilomaara * JALKAA;
+            Console.WriteLine(henkilomaara + " persons have " + arvo + " feet");
+
+            arvo = henkilomaara * SORMIA;
+            Console.WriteLine(henkilomaara + " persons have " + arvo + " fingers");
+
+            arvo = henkilomaara / PELAAJAA;
+            int jaannos = henkilomaara % PELAAJAA;
+            Console.WriteLine(henkilomaara + " persons form " + arvo + " teams and " + jaannos + " persons are left out");
+
+            arvo = arvo * PALLOJA;
+            Console.WriteLine(arvo + " balls are needed");
+
+            Console.WriteLine(); // Tyhjä rivi
+
+            // Toinen henkilöluku
+            henkilomaara = 123456789;
+
+            arvo = henkilomaara * JALKAA;
+            Console.WriteLine(henkilomaara + " persons have " + arvo + " feet");
+
+            arvo = henkilomaara * SORMIA;
+            Console.WriteLine(henkilomaara + " persons have " + arvo + " fingers");
+
+            arvo = henkilomaara / PELAAJAA;
+            jaannos = henkilomaara % PELAAJAA;
+            Console.WriteLine(henkilomaara + " persons form " + arvo + " teams and " + jaannos + " persons are left out");
+
+            arvo = arvo * PALLOJA;
+            Console.WriteLine(arvo + " balls are needed");
+
+            Console.WriteLine(); */
 
             // TEHTÄVÄ 3 – Lasketaan ympyrän pinta-ala ja piiri
             const double PII = 3.14159; // Piin arvo
