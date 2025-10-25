@@ -12,13 +12,13 @@ namespace Ex1
             // Tehtävä 1
             
             Console.WriteLine("Meow Owoh");
-            Console.WriteLine("");
+            Console.WriteLine();
             
             // Tehtävä 2
             
             Console.WriteLine("Meow");
             Console.WriteLine("Owoh");
-            Console.WriteLine("");
+            Console.WriteLine();
             
              // Tehtävä 3
             
@@ -29,7 +29,7 @@ namespace Ex1
             Console.WriteLine(" o   o");
             Console.WriteLine("  ooo");
             Console.WriteLine("   o");
-            Console.WriteLine("");
+            Console.WriteLine();
             
             // Tehtävä 4
             
@@ -40,7 +40,7 @@ namespace Ex1
             Console.Write(" o   o\n");
             Console.Write("  ooo\n");
             Console.Write("   o\n");
-            Console.WriteLine("");
+            Console.WriteLine();
 
             // Tehtävä 5
 
@@ -53,7 +53,7 @@ namespace Ex1
                 "  ooo\n" +
                 "   o\n"
             );
-            Console.WriteLine("");
+            Console.WriteLine();
 
             // Tehtävä 6
             
