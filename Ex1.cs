@@ -16,8 +16,8 @@ namespace Ex1
             
             // Tehtävä 2
             
-            Console.WriteLine("Jaturapit");
-            Console.WriteLine("Orasan");
+            Console.WriteLine("Meow");
+            Console.WriteLine("Owoh");
             Console.WriteLine("");
             
              // Tehtävä 3
@@ -57,8 +57,8 @@ namespace Ex1
 
             // Tehtävä 6
             
-            string nimi = "Jatu Orasan";
-            int ika = 30;
+            string nimi = "Meow Uwu";
+            int ika = 20;
 
             Console.WriteLine(nimi + " " + ika + " v");
 
