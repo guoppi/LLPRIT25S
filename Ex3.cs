@@ -17,24 +17,19 @@ namespace Harjoitus_3
             Console.WriteLine();
 
             // TEHTÄVÄ 2 – Lasketaan jalat, sormet, joukkueet ja pallot
-            const int JALKAA = 2, SORMIA = 10, PELAAJAA = 11, PALLOJA = 3; // Vakioarvot ihmiskehon ja jalkapallon logiikkaan
-            int[] henkiloita = { 100, 123456789 }; // Kaksi erilaista henkilömääriä testattavaksi Huom! tällä int[] = taulukko eli käy läpi 100 ja 123456789 mitä ei olla vielä matskussa
+            const int jalkaa = 2, sormia = 10, pelaaja = 11, palloja = 3;
+            int[] henkiloita = { 100, 123456789 };
 
-            foreach (int henkilomaara in henkiloita) // Käydään läpi jokainen henkilöluku
+            foreach (int henkilomaara in henkiloita)
             {
-                arvo = henkilomaara * JALKAA; // Lasketaan jalkojen määrä
-                Console.WriteLine($"{henkilomaara} persons have {arvo} feet");
-
-                arvo = henkilomaara * SORMIA; // Lasketaan sormien määrä
-                Console.WriteLine($"{henkilomaara} persons have {arvo} fingers");
-
-                arvo = henkilomaara / PELAAJAA; // Lasketaan kuinka monta joukkuetta voidaan muodostaa
-                int jaannos = henkilomaara % PELAAJAA; // Selvitetään montako jää yli
-                Console.WriteLine($"{henkilomaara} persons form {arvo} teams and {jaannos} persons are left out");
-
-                arvo *= PALLOJA; // Lasketaan pallojen määrä joukkueiden mukaan
-                Console.WriteLine($"{arvo} balls are needed");
-                Console.WriteLine();
+                int feet = henkilomaara * jalkaa;
+                int fingers = henkilomaara * sormia;
+                Console.WriteLine($"{henkilomaara} persons have {feet} feet and {fingers} fingers");
+                int teams = henkilomaara / pelaaja;
+                int leftover = henkilomaara % pelaaja;
+                Console.WriteLine($"{henkilomaara} persons form {teams} teams and {leftover} persons are left out");
+                int balls = teams * palloja;
+                Console.WriteLine($"{teams} football teams need {balls} balls\n");
             }
             /* Tältä näyttää miltä koodi näyttää ilman taulukkoa ja foreach. Huomattavasti lyhyempi toi ylempi.
             
