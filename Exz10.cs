@@ -3,6 +3,7 @@ using System;
 class Program
 {
     static void Main() // Ohjelman aloituspaikka. Tämä suoritetaan ensimmäisenä kun ohjelma käynnistyy.
+                       // Eli iha alkuun selvennöksenä, Main on ohjelman aloituspiste, ja aliohjelma on erillinen osa, joka suorittaa tietyn tehtävän mikä on tuolla alhaalla.
     {
         // Testataan OSquare4 viisi kertaa
         int count = 0; // Alustetaan laskuri count arvolla 0.
