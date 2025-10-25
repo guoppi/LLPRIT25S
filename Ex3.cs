@@ -77,16 +77,10 @@ namespace Harjoitus_3
             // TEHTÄVÄ 3 – Lasketaan ympyrän pinta-ala ja piiri
             const double PII = 3.14159; // Piin arvo
             double[] radius = { 1, 5, 10 }; // Kolme eri säteen arvoa
-            double arvoDouble; // Yksi muuttuja, jota käytetään sekä piiriin että pinta-alaan
-
             foreach (double r in radius)
             {
-                arvoDouble = 2 * PII * r; // Piiri
-                double piiri = arvoDouble;
-
-                arvoDouble = PII * r * r; // Pinta-ala
-                double ala = arvoDouble;
-
+                double piiri  = 2 * PII * r; // Piiri
+                double ala = PII * r * r; // Pinta-ala
                 // Tulostetaan säde, pinta-ala ja piiri kahden desimaalin tarkkuudella
                 Console.WriteLine($"Radius: {r:0.00}, Area: {ala:0.00}, Circumference: {piiri:0.00}");
                 Console.WriteLine();
