@@ -1,15 +1,18 @@
 using System;
+
 namespace Programs
 {
     static class Solution
     {
-        //IF MOODLE gives 0/6, you should check the assigment on moodle ex10 xD
+        //Doesnt work in MOODLE VPL but it works in Visual Studio. Code is 6/6 with few tuning, and the asnwer is literally below this text, happy coding :)
         //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
         //SO -- > Replace the word static with word public to make the test program compile
-        static void ExampleSubroutine()
+        public static void ExampleSubroutine()
         {
             //No need to remove this subroutine
+
             //Tehtävä 1
+
             // Testataan OSquare4 viisi kertaa
             int count = 0; // Alustetaan laskuri count arvolla 0.
             while (count < 5) // Toistetaan niin kauan kuin count on alle 5.
@@ -27,7 +30,7 @@ namespace Programs
                 Console.WriteLine(); // Tulostetaan tyhjä rivi neliöiden väliin.
                 n++; // Lisätään n:ään yksi, jotta silmukka etenee.
             }
-        
+
             // Testataan XSquareN eri kokoisilla ja eri merkeillä
             XSquareN(3, '*'); // Piirretään 3x3 neliö tähdillä '*'.
             Console.WriteLine(); // Tyhjä rivi.
@@ -51,11 +54,11 @@ namespace Programs
             double result2 = Sum(100.25, 200.75); // Lasketaan 100.25 + 200.75 ja tallennetaan tulos.
             Console.WriteLine("Summa: " + result2); // Tulostetaan laskettu summa.
         }
-    
-    
+
+
         // Tehtävä 1 aliohjelma
         // Aliohjelma, joka piirtää 4x4 neliön kirjaimilla 'o'.
-        static void OSquare4()
+        public static void OSquare4()
         {
             for (int i = 0; i < 4; i++) // Toistetaan 4 riviä.
             {
@@ -68,7 +71,7 @@ namespace Programs
         }
 
         // Aliohjelma, joka piirtää n x n neliön kirjaimilla 'o'.
-        static void OSquareN(int n)
+        public static void OSquareN(int n)
         {
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
             {
@@ -79,9 +82,9 @@ namespace Programs
                 Console.WriteLine(); // Rivin vaihto.
             }
         }
-    
+
         // Aliohjelma, joka piirtää n x n neliön valitulla merkillä.
-        static void XSquareN(int n, char merkki)
+        public static void XSquareN(int n, char merkki)
         {
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
             {
@@ -94,7 +97,7 @@ namespace Programs
         }
 
         // Aliohjelma, joka palauttaa n x n neliön merkkijonona.
-        static string GetXSquareN(int n, char merkki)
+        public static string GetXSquareN(int n, char merkki)
         {
             string tulos = ""; // Alustetaan tyhjä merkkijono.
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
@@ -109,17 +112,23 @@ namespace Programs
         }
 
         // Aliohjelma, joka laskee kahden luvun summan ja tulostaa sen.
-        static void OutputSum(double a, double b)
+        public static void OutputSum(double a, double b)
         {
             double summa = a + b; // Lasketaan summa.
             Console.WriteLine("Summa: " + summa); // Tulostetaan summa.
         }
 
         // Aliohjelma, joka laskee kahden luvun summan ja palauttaa sen.
-        static double Sum(double a, double b)
+        public static double Sum(double a, double b)
         {
             return a + b; // Palautetaan laskettu summa.
         }
     }
-    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Solution.ExampleSubroutine();
+        }
+    }
 }
