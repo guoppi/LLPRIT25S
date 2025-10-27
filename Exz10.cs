@@ -15,7 +15,7 @@ namespace Programs
 
             // Testataan OSquare4 viisi kertaa
             int count = 0; // Alustetaan laskuri count arvolla 0.
-            while (count < 5) // Toistetaan niin kauan kuin count on alle 5.
+            while (count < 5) // Toistetaan niin kauan kuin count on alle 5. Voi olla mikä tahansa arvo int rangella.
             {
                 OSquare4(); // Kutsutaan aliohjelmaa, joka piirtää 4x4 neliön kirjaimilla 'o'.
                 Console.WriteLine(); // Tulostetaan tyhjä rivi neliöiden väliin.
@@ -24,7 +24,7 @@ namespace Programs
 
             // Testataan OSquareN arvoilla 1–5
             int n = 1; // Alustetaan muuttuja n arvolla 1.
-            while (n <= 5) // Toistetaan niin kauan kuin n on enintään 5.
+            while (n <= 5) // Toistetaan niin kauan kuin n on enintään 5. Sama tässä.
             {
                 OSquareN(n); // Kutsutaan aliohjelmaa, joka piirtää n x n neliön kirjaimilla 'o'.
                 Console.WriteLine(); // Tulostetaan tyhjä rivi neliöiden väliin.
@@ -49,10 +49,10 @@ namespace Programs
 
             // Testataan Sum ja tulostetaan tulos
             double result1 = Sum(2.5, 7.5); // Lasketaan 2.5 + 7.5 ja tallennetaan tulos muuttujaan.
-            Console.WriteLine("Summa: " + result1); // Tulostetaan laskettu summa.
+            Console.WriteLine("Summa: " + result1); // Tulostetaan palautettu summa.
 
             double result2 = Sum(100.25, 200.75); // Lasketaan 100.25 + 200.75 ja tallennetaan tulos.
-            Console.WriteLine("Summa: " + result2); // Tulostetaan laskettu summa.
+            Console.WriteLine("Summa: " + result2); // Tulostetaan palautettu summa.
         }
 
 
