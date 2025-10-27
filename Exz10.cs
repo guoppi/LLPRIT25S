@@ -124,7 +124,7 @@ namespace Programs
             return a + b; // Palautetaan laskettu summa.
         }
     }
-    class Program
+    class Program // If ur unsure why this is here or does this even belong here, think again xd
     {
         static void Main(string[] args)
         {
