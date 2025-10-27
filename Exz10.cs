@@ -1,11 +1,12 @@
 using System;
 namespace Programs
 {
-    public class Solution
+    static class Solution
     {
+        //IF MOODLE gives 0/6, you should check the assigment on moodle ex10 xD
         //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
         //SO -- > Replace the word static with word public to make the test program compile
-        public void ExampleSubroutine()
+        static void ExampleSubroutine()
         {
             //No need to remove this subroutine
             //Tehtävä 1
@@ -54,7 +55,7 @@ namespace Programs
     
         // Tehtävä 1 aliohjelma
         // Aliohjelma, joka piirtää 4x4 neliön kirjaimilla 'o'.
-        public void OSquare4()
+        static void OSquare4()
         {
             for (int i = 0; i < 4; i++) // Toistetaan 4 riviä.
             {
@@ -67,7 +68,7 @@ namespace Programs
         }
 
         // Aliohjelma, joka piirtää n x n neliön kirjaimilla 'o'.
-        public void OSquareN(int n)
+        static void OSquareN(int n)
         {
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
             {
@@ -80,7 +81,7 @@ namespace Programs
         }
     
         // Aliohjelma, joka piirtää n x n neliön valitulla merkillä.
-        public void XSquareN(int n, char merkki)
+        static void XSquareN(int n, char merkki)
         {
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
             {
@@ -93,7 +94,7 @@ namespace Programs
         }
 
         // Aliohjelma, joka palauttaa n x n neliön merkkijonona.
-        public string GetXSquareN(int n, char merkki)
+        static string GetXSquareN(int n, char merkki)
         {
             string tulos = ""; // Alustetaan tyhjä merkkijono.
             for (int i = 0; i < n; i++) // Toistetaan n riviä.
@@ -108,14 +109,14 @@ namespace Programs
         }
 
         // Aliohjelma, joka laskee kahden luvun summan ja tulostaa sen.
-        public void OutputSum(double a, double b)
+        static void OutputSum(double a, double b)
         {
             double summa = a + b; // Lasketaan summa.
             Console.WriteLine("Summa: " + summa); // Tulostetaan summa.
         }
 
         // Aliohjelma, joka laskee kahden luvun summan ja palauttaa sen.
-        public double Sum(double a, double b)
+        static double Sum(double a, double b)
         {
             return a + b; // Palautetaan laskettu summa.
         }
