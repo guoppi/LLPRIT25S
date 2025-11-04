@@ -3,7 +3,7 @@ namespace Programs
 {
     public class Solution
     {
-        // You know what to do Owoh :3
+        // You know what to do Owoh :3, eli tää ei voi sit testaa mitenkää visualis vaa pitää raiskata huolella sitä moodle vpl -_-
         //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
         //SO -- > Replace the word static with word public to make the test program compile
         public static void ExampleSubroutine()
