@@ -10,7 +10,7 @@ public class Solution
         // Tehtävä 1
         // Testataan OSquare4 viisi kertaa
         // Alustetaan laskuri count arvolla 0.
-        // Toistetaan niin kauan kuin count on alle 5.
+        // Toistetaan niin kauan kuin count on alle 5 tai minkä tahansa arvo mutta testitapauksessa nyt 5.
         // Kutsutaan aliohjelmaa, joka piirtää 4x4 neliön kirjaimilla 'o'.
         // Tulostetaan tyhjä rivi neliöiden väliin.
         // Lisätään countiin yksi, jotta silmukka etenee.
