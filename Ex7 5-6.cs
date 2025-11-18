@@ -24,6 +24,19 @@ namespace Ex6
                 }
             }
             while (luku >= 0); // Toistetaan niin kauan kuin luku on positiivinen
+            /*
+            do...while-silmukka toimii näin:
+            Ensin tehdään se, mitä silmukan sisällä lukee, ja vasta sen jälkeen kysytään: "Jatketaanko vielä?"
+            Jos vastaus on kyllä (ehto on totta), tehdään sama uudestaan. Jos vastaus on ei (ehto ei ole totta), lopetetaan.
+            Tässä ohjelmassa halutaan, että käyttäjä saa aina syöttää ainakin yhden luvun ennen kuin tarkistetaan, onko se positiivinen.
+            Siksi käytetään do...while-silmukkaa, koska se aina suorittaa vähintään kerran ennen tarkistusta.
+            
+            Kuvittele, että äiti sanoo:
+            "Maista ainakin yhden palan vihanneksia, ja jos se maistuu hyvältä, saat ottaa lisää."
+            Sinun täytyy maistaa ensin (do), ja vasta sen jälkeen äiti kysyy (while):
+            "Haluatko lisää?"
+            Jos haluat, otat lisää. Jos et halua, lopetat.
+            */
 
 
             // TEHTÄVÄ 6: Etsitään pienin ja suurin positiivinen luku käyttäjän syötteistä
