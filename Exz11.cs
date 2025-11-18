@@ -79,9 +79,9 @@ namespace Programs
             string[] nimiLista = new string[10]; // Luodaan nimi-taulukko.
             string[] numeroLista = new string[10]; // Luodaan numero-taulukko.
 
-            nimiLista = AddData(nimiLista, 0, "Hanhi"); // Lisätään nimi indeksiin 0.
+            nimiLista = AddData(nimiLista, 0, "Allu"); // Lisätään nimi indeksiin 0.
             numeroLista = AddData(numeroLista, 0, "0401234567"); // Lisätään numero indeksiin 0.
-            nimiLista = AddData(nimiLista, 1, "Poro"); // Lisätään nimi indeksiin 1.
+            nimiLista = AddData(nimiLista, 1, "Jonne"); // Lisätään nimi indeksiin 1.
             numeroLista = AddData(numeroLista, 1, "0509876543"); // Lisätään numero indeksiin 1.
             nimiLista = AddData(nimiLista, 2, "Jussi"); // Lisätään nimi indeksiin 2.
             numeroLista = AddData(numeroLista, 2, "0445551234"); // Lisätään numero indeksiin 2.
