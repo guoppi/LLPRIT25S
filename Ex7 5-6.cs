@@ -44,7 +44,6 @@ namespace Ex6
 
             // TEHTÄVÄ 6: Etsitään pienin ja suurin positiivinen luku käyttäjän syötteistä
 
-            luku = 0; // Alustetaan luku nollaksi
             int pienin = int.MaxValue; // Alustetaan pienin mahdollisimman suureksi
             int suurin = int.MinValue; // Alustetaan suurin mahdollisimman pieneksi
             // pienin aloitetaan mahdollisimman suuresta arvosta, jotta ensimmäinen syöte on varmasti pienempi ja voi korvata sen
