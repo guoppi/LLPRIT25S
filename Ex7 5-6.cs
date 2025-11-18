@@ -46,8 +46,12 @@ namespace Ex6
 
             int pienin = int.MaxValue; // Alustetaan pienin mahdollisimman suureksi
             int suurin = int.MinValue; // Alustetaan suurin mahdollisimman pieneksi
-            // pienin aloitetaan mahdollisimman suuresta arvosta, jotta ensimmäinen syöte on varmasti pienempi ja voi korvata sen
-            // suurin aloitetaan mahdollisimman pienestä arvosta, jotta ensimmäinen syöte on varmasti suurempi ja voi korvata sen
+            /*
+            Aloitamme pienimmän luvun niin isosta arvosta kuin tietokone osaa käsitellä, jotta ensimmäinen oikea luku on varmasti pienempi ja voi korvata sen, 
+            ja suurimman luvun niin pienestä arvosta kuin tietokone osaa käsitellä, jotta ensimmäinen oikea luku on varmasti suurempi ja voi korvata sen.
+            Vertaus:
+            Se on kuin sanoisit: "Pienin kivi on nyt vuoren kokoinen ja suurin kivi on nyt hiekanjyvän kokoinen, jotta kun löydän ensimmäisen oikean kiven, voin vaihtaa nämä arvot heti."
+            */
             do
             {
                 luku = int.Parse(Console.ReadLine()); // Luetaan uusi luku
