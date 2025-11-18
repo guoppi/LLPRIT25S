@@ -37,7 +37,7 @@ namespace Ex6
             "Haluatko lisää?"
             Jos haluat, otat lisää. Jos et halua, lopetat.
             
-            Pelkkä while on kuin opettaja sanoo: "Jos olet tehnyt läksyt, saat pelata." Jos et ole tehnyt läksyjä, et pelaa ollenkaan.
+            while on kuin opettaja sanoo: "Jos olet tehnyt läksyt, saat pelata." Jos et ole tehnyt läksyjä, et pelaa ollenkaan.
             do...while on kuin opettaja sanoo: "Pelaa kerran, mutta jos läksyt on tehty, saat pelata lisää." Eli pelaat ainakin kerran.
             */
 
