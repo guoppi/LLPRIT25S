@@ -22,6 +22,7 @@ namespace Programs
         Console.WriteLine(i);
         i++;
     }
+    Muista aina alltosulut silmukassa, muutoin se jumittuu!!!!
 
     SWITCH
     Valitsee suoritettavan koodilohkon muuttujan arvon perusteella.
