@@ -4,178 +4,224 @@ namespace Programs
 {
     public class Solution
     {
-        // Tämä metodi testaa kaikkia muita aliohjelmia.
+        //IMPORTANT NOTE: you should declare ALL subroutines here in VPL (not in Visual Studio) as public non-static as
+        //SO -- > Replace the word static with word public to make the test program compile
         public void ExampleSubroutine()
         {
-            // Testataan Sum-metodia
-            // Lasketaan 2.5 + 7.5 ja tallennetaan tulos muuttujaan result1.
-            // Tulostetaan laskettu summa.
+            // Testataan Sum ja tulostetaan tulos
+            double result1 = Sum(2.5, 7.5); // Lasketaan 2.5 + 7.5 ja tallennetaan tulos muuttujaan.
+            Console.WriteLine("Summa: " + result1); // Tulostetaan palautettu summa.
 
-            // Lasketaan 100.25 + 200.75 ja tallennetaan tulos.
-            // Tulostetaan laskettu summa.
+            double result2 = Sum(100.25, 200.75); // Lasketaan 100.25 + 200.75 ja tallennetaan tulos.
+            Console.WriteLine("Summa: " + result2); // Tulostetaan palautettu summa.
 
-            // Testataan ArraySum-metodia
-            // Luodaan taulukko numbers.
-            // Lasketaan taulukon summa.
-            // Tulostetaan taulukon summa.
+            // Testataan ArraySum
+            double[] numbers = { 1, 2, 3, 4, 5 };
+            double arrayResult = ArraySum(numbers);
+            Console.WriteLine("Talulukon summa: " + arrayResult);
+            
+            // Testataan Factorial
+            int tulos = Factorial(1);
+            int tulos2 = Factorial(6);
+            int tulos3 = Factorial(10);
+            Console.WriteLine(tulos);
+            Console.WriteLine(tulos2);
+            Console.WriteLine(tulos3);
+            
+            // Testataan BinCoeff
+            int binCoeff1 = BinCoeff(10, 5);
+            int binCoeff2 = BinCoeff(6, 3);
+            int binCoeff3 = BinCoeff(10, 3);
+            Console.WriteLine(binCoeff1);
+            Console.WriteLine(binCoeff2);
+            Console.WriteLine(binCoeff3);
+            
+            // Testataan MinFind
+            int[] myTable = { 34, 22, 66, 23, 5, 33, 72 };
+            int min = MinFind(myTable);
+            Console.WriteLine("Pienimmän arvon indeksi on: " + min);
+            Console.WriteLine("Alkaen indeksistä 0: " + MinFind(myTable, 0));
+            Console.WriteLine("Alkaen indeksistä 1: " + MinFind(myTable, 1));
+            Console.WriteLine("Alkaen indeksistä 4: " + MinFind(myTable, 4));
+            Console.WriteLine("Alkaen indeksistä 5: " + MinFind(myTable, 5));
+            Console.WriteLine("Alkaen indeksistä 6: " + MinFind(myTable, 6));
+            Console.WriteLine("Alkaen indeksistä 7: " + MinFind(myTable, 7));
+            
+            // Tehtävä 6: Testataan lajittelua Factorial- ja BinCoeff-taulukoilla
+            int[] factorialArray = { Factorial(1), Factorial(6), Factorial(10) };
+            int[] binCoeffArray = { BinCoeff(10, 5), BinCoeff(6, 3), BinCoeff(10, 3) };
 
-            // Testataan Factorial-metodia
-            // Lasketaan 1! ja tallennetaan tulos.
-            // Lasketaan 6! ja tallennetaan tulos.
-            // Lasketaan 10! ja tallennetaan tulos.
-            // Tulostetaan 1!.
-            // Tulostetaan 6!.
-            // Tulostetaan 10!.
+            int[] sortedFactorial = Sort(factorialArray);
+            int[] sortedBinCoeff = Sort(binCoeffArray);
 
-            // Testataan BinCoeff-metodia
-            // Lasketaan binomikerroin C(10,5).
-            // Lasketaan binomikerroin C(6,3).
-            // Lasketaan binomikerroin C(10,3).
-            // Tulostetaan C(10,5).
-            // Tulostetaan C(6,3).
-            // Tulostetaan C(10,3).
-
-            // Testataan MinFind-metodia
-            // Luodaan taulukko myTable.
-            // Etsitään pienimmän arvon indeksi.
-            // Tulostetaan pienimmän arvon indeksi.
-            // Etsitään pienin arvo alkaen indeksistä 0.
-            // Etsitään pienin arvo alkaen indeksistä 1.
-            // Etsitään pienin arvo alkaen indeksistä 4.
-            // Etsitään pienin arvo alkaen indeksistä 5.
-            // Etsitään pienin arvo alkaen indeksistä 6.
-            // Etsitään pienin arvo alkaen indeksistä 7.
-
-            // Testataan lajittelua Factorial- ja BinCoeff-taulukoilla
-            // Luodaan factorial-taulukko.
-            // Luodaan binCoeff-taulukko.
-            // Lajitellaan factorial-taulukko.
-            // Lajitellaan binCoeff-taulukko.
-            // Tulostetaan lajiteltu factorial-taulukko.
-            // Tulostetaan lajiteltu binCoeff-taulukko.
-            // Lajitellaan myTable.
-            // Tulostetaan lajitelun taulukon arvot pilkulla erotettuna.
-
-            // Testataan haku taulukosta
-            // Luodaan merkkijonotaulukko.
-            // Etsitään "koira" taulukosta.
-            // Etsitään "hevonen" taulukosta (ei löydy).
-
-            // Testataan AddData ja SeekNumber
-            // Luodaan nimi-taulukko.
-            // Luodaan numero-taulukko.
-            // Lisätään nimi indeksiin 0.
-            // Lisätään numero indeksiin 0.
-            // Lisätään nimi indeksiin 1.
-            // Lisätään numero indeksiin 1.
-            // Lisätään nimi indeksiin 2.
-            // Lisätään numero indeksiin 2.
-            // Tulostetaan kaikki nimet.
-            // Tulostetaan kaikki numerot.
-            // Haetaan Hanhen numero.
-            // Haetaan Poron numero.
-            // Haetaan Jussin numero.
-
-
-            // Laskee kahden luvun summan
-            public double Sum(double a, double b)
+            Console.WriteLine("Lajiteltu Factorial-taulukko:");
+            foreach (int val in sortedFactorial)
             {
-                // Palauttaa summan.
+                Console.Write(val + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Lajiteltu BinCoeff-taulukko:");
+            foreach (int val in sortedBinCoeff)
+            {
+                Console.Write(val + " ");
+            }
+            Console.WriteLine();
+            int[] sorted = Sort(myTable);
+            Console.WriteLine("Lajiteltu: " + string.Join(", ", sorted));
+
+            string[] words = { "kissa", "koira", "lintu", "kala" };
+            Console.WriteLine("koira indeksi: " + Seek(words, "koira"));
+            Console.WriteLine("hevonen indeksi: " + Seek(words, "hevonen"));
+
+            string[] nimiLista = new string[10];
+            string[] numeroLista = new string[10];
+
+            nimiLista = AddData(nimiLista, 0, "Hanhi");
+            numeroLista = AddData(numeroLista, 0, "0401234567");
+            nimiLista = AddData(nimiLista, 1, "Poro");
+            numeroLista = AddData(numeroLista, 1, "0509876543");
+            nimiLista = AddData(nimiLista, 2, "Jussi");
+            numeroLista = AddData(numeroLista, 2, "0445551234");
+
+            Console.WriteLine("Nimet: " + string.Join(", ", nimiLista));
+            Console.WriteLine("Numerot: " + string.Join(", ", numeroLista));
+
+            Console.WriteLine("Hanhi numero: " + SeekNumber(nimiLista, numeroLista, "Hanhi"));
+            Console.WriteLine("Poro numero: " + SeekNumber(nimiLista, numeroLista, "Poro"));
+            Console.WriteLine("Jussi numero: " + SeekNumber(nimiLista, numeroLista, "Jussi"));
+
+            
+        }
+        //NOTE: DO NOT ERASE ANYTHING ABOVE THIS LINE---------------------------------
+
+        //Enter your subroutines here, just as is, on by one and run the test
+
+        // Aliohjelma, joka laskee kahden luvun summan ja palauttaa sen.
+        public double Sum(double a, double b)
+        {
+            return a + b; // Palautetaan laskettu summa.
+        }
+        public double ArraySum(double[] arr)
+        {
+            double total = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                total = Sum(total, arr[i]);
+            }
+            return total;
+        }
+        public int Factorial(int n)
+        {
+
+            int kertoma = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                kertoma *= i;
+            }
+            return kertoma;
+        }
+        
+        public int BinCoeff(int n, int k)
+        {
+            return Factorial(n) / (Factorial(k) * Factorial(n - k));
+        }
+        
+        public int MinFind(int[] arr)
+        {
+            int min = 0;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < arr[min])
+                {
+                    min = i;
+                }
+            }
+            return min;
+        }
+        
+        public int MinFind(int[] arr, int n)
+        {
+            if (n >= arr.Length)
+            {
+                return -1;
+            }
+            int min = n;
+            for (int i = n; i < arr.Length; i++)
+            {
+                if (arr[i] < arr[min])
+                {
+                    min = i;
+                }
+            }
+            return min;
+        }
+        
+
+        public int[] Sort(int[] taulu)
+        {
+            int[] sortedArray = (int[])taulu.Clone();
+
+            for (int i = 0; i < sortedArray.Length - 1; i++)
+            {
+                int k = MinFind(sortedArray, i);
+                if (i != k)
+                {
+                    sortedArray = swap(sortedArray, i, k);
+                }
             }
 
-            // Laskee taulukon kaikkien arvojen summan
-            public double ArraySum(double[] arr)
-            {
-                // Alustetaan summa.
-                // Käydään läpi taulukko.
-                // Lisätään arvo summaan.
-                // Palautetaan summa.
-            }
+            return sortedArray;
+        }
 
-            // Laskee kertoman (n!)
-            public int Factorial(int n)
+        public int[] swap(int[] taulu, int i, int j)
+        {
+            int[] localArray = new int[taulu.Length];
+            for (int k = 0; k < localArray.Length; k++)
             {
-                // Alustetaan kertoma.
-                // Käydään läpi luvut 1...n.
-                // Kerrotaan kertoma i:llä.
-                // Palautetaan kertoma.
+                localArray[k] = taulu[k];
             }
+            int temp = localArray[i];
+            localArray[i] = localArray[j];
+            localArray[j] = temp;
+            
+            return localArray;
+        }
+        public int Seek(string[] arr, string target)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Equals(target, StringComparison.OrdinalIgnoreCase))
+                    return i;
+            }
+            return -1;
+        }
+        public string[] AddData(string[] arr, int index, string data)
+        {
+            if (arr == null) // Kyseessä taulukko, ja tuo null = jos taulukko ei luotu, jos siinä olisi "" niin se ei täsmää.
+            {
+                arr = new string[69];
+            }
+            if (index < 0 || index >= arr.Length)
+            return arr;
+            
+            arr[index] = data;
+            return arr;
+            
+        }
 
-            // Laskee binomikertoimen C(n,k)
-            public int BinCoeff(int n, int k)
+        public string SeekNumber(string[] nimet, string[] numerot, string etsiTama)
+        {
+            for (int i = 0; i < nimet.Length; i++)
             {
-                // Palauttaa binomikertoimen kaavan mukaan.
+                if (nimet[i] == etsiTama)
+                {
+                    return numerot[i];
+                }
             }
-
-            // Palauttaa pienimmän arvon indeksin taulukosta
-            public int MinFind(int[] arr)
-            {
-                // Alustetaan pienimmän arvon indeksi.
-                // Käydään läpi taulukko.
-                // Jos nykyinen arvo on pienempi kuin nykyinen minimi.
-                // Päivitetään minimi-indeksi.
-                // Palautetaan pienimmän arvon indeksi.
-            }
-
-            // Palauttaa pienimmän arvon indeksin alkaen annetusta indeksistä
-            public int MinFind(int[] arr, int n)
-            {
-                // Jos aloitusindeksi on taulukon ulkopuolella.
-                // Palautetaan -1.
-                // Alustetaan minimi-indeksi aloitusindeksillä.
-                // Käydään läpi taulukko alkaen n:stä.
-                // Jos nykyinen arvo on pienempi kuin nykyinen minimi.
-                // Päivitetään minimi-indeksi.
-                // Palautetaan pienimmän arvon indeksi.
-            }
-
-            // Lajittelee taulukon valintalajittelulla
-            public int[] Sort(int[] taulu)
-            {
-                // Kopioidaan taulukko.
-                // Käydään läpi taulukko.
-                // Etsitään pienimmän arvon indeksi alkaen i:stä.
-                // Jos indeksi ei ole sama.
-                // Vaihdetaan arvot.
-                // Palautetaan lajitelun taulukko.
-            }
-
-            // Vaihtaa kahden indeksin arvot taulukossa
-            public int[] swap(int[] taulu, int i, int j)
-            {
-                // Luodaan uusi taulukko.
-                // Kopioidaan arvot.
-                // Tallennetaan i:n arvo.
-                // Vaihdetaan i:n arvo j:n arvoksi.
-                // Vaihdetaan j:n arvo tempiksi.
-                // Palautetaan taulukko.
-            }
-
-            // Etsii merkkijonon taulukosta ja palauttaa sen indeksin
-            public int Seek(string[] arr, string target)
-            {
-                // Käydään läpi taulukko.
-                // Verrataan merkkijonoa (ei kirjainkoolla väliä).
-                // Palautetaan indeksi, jos löytyy.
-                // Palautetaan -1, jos ei löydy.
-            }
-
-            // Lisää dataa taulukkoon annetussa indeksissä
-            public string[] AddData(string[] arr, int index, string data)
-            {
-                // Jos taulukkoa ei ole alustettu.
-                // Luodaan uusi taulukko.
-                // Jos indeksi on virheellinen.
-                // Palautetaan alkuperäinen taulukko.
-                // Lisätään data indeksiin.
-                // Palautetaan taulukko.
-            }
-
-            // Etsii nimen perusteella numeron kahdesta taulukosta
-            public string SeekNumber(string[] nimet, string[] numerot, string etsiTama)
-            {
-                // Käydään läpi nimet-taulukko.
-                // Jos nimi täsmää.
-                // Palautetaan vastaava numero.
-                // Palautetaan tyhjä merkkijono, jos ei löydy.
-            }
+            return ""; // Moodle VPL hyväksyy vain ""
+        }
+        
+        //NOTE: DO NOT ERASE ANYTHING ABOVE THIS LINE---------------------------------
+    }
+}
