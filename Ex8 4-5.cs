@@ -42,5 +42,13 @@ namespace Ex6
             Console.WriteLine(string.Join(", ", nimet)); // Tulostetaan nimet käänteisessä järjestyksessä
             Console.WriteLine();
         }
+        /* Tai vaihtoehtoisesti voi myös tehdä näin
+            string[] nimet = new string[10];
+            for (int i = 0; i < 10; i++)
+                nimet[i] = Console.ReadLine();
+            Console.Write(string.Join(", ", nimet));
+            Array.Reverse(nimet);
+            Console.Write(string.Join(", ", nimet));
+        */
     }
 }
